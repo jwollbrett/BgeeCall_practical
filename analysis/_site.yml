@@ -1,7 +1,7 @@
-name: "BgeeCall_course"
+name: BgeeCall_course
 output_dir: ../docs
 navbar:
-  title: "BgeeCall_course"
+  title: BgeeCall_course
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fa-github
+    text: Source code
+    href: https://github.com/jwollbrett/BgeeCall_course
 output:
   workflowr::wflow_html:
     toc: yes
