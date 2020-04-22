@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree87c0ed600212e1baa9ab5fce625cca18454db998targetblank87c0ed6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/87c0ed600212e1baa9ab5fce625cca18454db998" target="_blank">87c0ed6</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree4935407b50f03af26793a37405db0101882e72e3targetblank4935407a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/4935407b50f03af26793a37405db0101882e72e3" target="_blank">4935407</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree87c0ed600212e1baa9ab5fce625cca18454db998targetblank87c0ed6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree4935407b50f03af26793a37405db0101882e72e3targetblank4935407a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/87c0ed600212e1baa9ab5fce625cca18454db998" target="_blank">87c0ed6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/4935407b50f03af26793a37405db0101882e72e3" target="_blank">4935407</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -573,6 +573,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/4935407b50f03af26793a37405db0101882e72e3/analysis/one_library.Rmd" target="_blank">4935407</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+wflow_publish(“analysis/one_library.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/c8027586e72684547939ec48a99f999e9e59abf9/docs/one_library.html" target="_blank">c802758</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -762,11 +796,10 @@ $S4_slots_summary
 <li>TPM_distribution_path : path to a PDF file containing a plot of abundance distribution</li>
 <li>S4_slots_sumary : path to the file with value of most important slots of the 3 BgeeCall classes</li>
 </ul>
-<p>It is possible to visualize text files with the command file.edit(PATH_TO_FILE). It is possible to open PDF files with the function openPDF(PATH_TO_FILE). For example :</p>
+<p>It is possible to open text files with the command file.edit(PATH_TO_FILE).</p>
+<p>For example :</p>
 <pre class="r"><code># open calls tsv file
-file.show(output_files_info$calls_tsv_path)
-# open pdf file in your. Not available on RStudio cloud
-openPDF(output_files_info$TPM_distribution_path)</code></pre>
+file.edit(output_files_info$calls_tsv_path)</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
