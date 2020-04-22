@@ -13,9 +13,65 @@ library(BgeeCall)
 
 ## Introduction
 
-This page describe how to generate presetn/absent calls for one RNA-Seq library.
+This page describe how to generate present/absent calls for one RNA-Seq library.
 
-```{r}
+## BgeeMetadata and KallistoMetadata classes
 
+These 2 classes are useful to tune how BgeeCall works. In this practical we will use default values.
+No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).
+An object of the KallistoMetadata class has to be created to specify is to download kallisto (as it is not installed on RStudio cloud).
+
+```{r kallisto_object}
+kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
+```
+
+## UserMetadata class
+
+An object of this class has to be created and value of some slots have to be modified to fit your data
+
+```{r user_object, eval=FALSE}
+user <- new("UserMetadata", species_id = NCBI_TAXON_ID)
+user <- setRNASeqLibPath(user, PATH_TO_RNASEQ_LIBRARY_DIR)
+user <- setTranscriptomeFromFile(user, PATH_TO_TRANSCRIPTOME)
+user <- setAnnotationFromFile(user, PATH_TO_GTF_FILE)
+user <- setOutputDir(user, PATH_TO_OUTPUT_DIR)
+user <- setWorkingPath(user, PATH_TO_WORKING_DIR)
+```
+
+
+## Generate present/absent calls
+
+Now that all objects have been created it is possible to run the generation of present/absent gene expression calls with one unique line of code
+
+```{r hidden_user_generation, message = FALSE, warning = FALSE, echo=FALSE}
+user <- new("UserMetadata", species_id = "7227")
+user <- setRNASeqLibPath(user, "/home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273/")
+user <- setTranscriptomeFromFile(user, "/home/julien/Documents/temp/test_bgeeCall/7227/Drosophila_melanogaster.BDGP6.28.cdna.all.fa.gz")
+user <- setAnnotationFromFile(user, "/home/julien/Documents/temp/test_bgeeCall/7227/Drosophila_melanogaster.BDGP6.28.99.gtf.gz")
+user <- setOutputDir(user, "/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273/")
+user <- setWorkingPath(user, "/home/julien/Documents/git/BgeeCall/")
+```
+
+```{r run_workflow}
+output_files_info <- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)
+output_files_info
+```
+
+This command generates a list with a link to 5 generated files.
+
+* calls_tsv_path : path to the file with abundance at gene level and present/absent expression calls
+* cutoff_info_file_path : path to the file with metadata about TPM cutoff (TPM cutoff, protein coding genes present, etc.)
+* abundance_tsv : path to the kallisto output file with abundance at transcript level
+* TPM_distribution_path : path to a PDF file containing a plot of abundance distribution
+* S4_slots_sumary : path to the file with value of most important slots of the 3 BgeeCall classes
+
+It is possible to visualize text files with the command file.edit(PATH_TO_FILE).
+It is possible to open PDF files with the function openPDF(PATH_TO_FILE).
+For example :
+```{r show_calls_file, eval = FALSE}
+# open calls tsv file
+file.show(output_files_info$calls_tsv_path)
+# open pdf file in your. Not available on RStudio cloud
+openPDF(output_files_info$TPM_distribution_path)
 ```
 
