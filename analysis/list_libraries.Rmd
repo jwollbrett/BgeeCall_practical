@@ -53,7 +53,7 @@ Now that all objects and files have been created it is possible to run the gener
 
 
 ```{r run_workflow, eval=FALSE}
-generate_calls_workflow(abundanceMetadata = kallisto, userFile = "PATH_TO_FILE.tsv")
+generate_calls_workflow(abundanceMetadata = kallisto, userFile = "inputFile.tsv")
 ```
 
 
