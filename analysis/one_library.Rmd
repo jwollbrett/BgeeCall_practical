@@ -43,17 +43,18 @@ user <- setWorkingPath(user, PATH_TO_WORKING_DIR)
 
 Now that all objects have been created it is possible to run the generation of present/absent gene expression calls with one unique line of code
 
-```{r hidden_user_generation, message = FALSE, warning = FALSE, echo=FALSE}
-user <- new("UserMetadata", species_id = "7227")
-user <- setRNASeqLibPath(user, "/home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273/")
-user <- setTranscriptomeFromFile(user, "/home/julien/Documents/temp/test_bgeeCall/7227/Drosophila_melanogaster.BDGP6.28.cdna.all.fa.gz")
-user <- setAnnotationFromFile(user, "/home/julien/Documents/temp/test_bgeeCall/7227/Drosophila_melanogaster.BDGP6.28.99.gtf.gz")
-user <- setOutputDir(user, "/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273/")
-user <- setWorkingPath(user, "/home/julien/Documents/git/BgeeCall/")
-```
 
-```{r run_workflow}
+```{r run_workflow, eval=FALSE}
 output_files_info <- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)
+output_files_info
+```
+```{r fake_output, echo=FALSE}
+output_files_info <- NULL
+output_files_info$calls_tsv_path <- "path/to/gene_level_abundance+calls.tsv"
+output_files_info$cutoff_info_file_path <- "path/to/gene_cutoff_info_file.tsv"
+output_files_info$abundance_tsv <- "abundance.tsv"
+output_files_info$TPM_distribution_path <- "path/to/gene_TPM_genic_intergenic+cutoff.pdf"
+output_files_info$S4_slots_summary <- "path/to/S4_slots_summary.tsv"
 output_files_info
 ```
 
