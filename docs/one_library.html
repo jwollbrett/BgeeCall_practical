@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef0127b0ffd052a247953fa8483b7ddec63199535targetblankf0127b0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f0127b0ffd052a247953fa8483b7ddec63199535" target="_blank">f0127b0</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree87c0ed600212e1baa9ab5fce625cca18454db998targetblank87c0ed6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/87c0ed600212e1baa9ab5fce625cca18454db998" target="_blank">87c0ed6</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef0127b0ffd052a247953fa8483b7ddec63199535targetblankf0127b0a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree87c0ed600212e1baa9ab5fce625cca18454db998targetblank87c0ed6a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f0127b0ffd052a247953fa8483b7ddec63199535" target="_blank">f0127b0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/87c0ed600212e1baa9ab5fce625cca18454db998" target="_blank">87c0ed6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -573,6 +573,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/87c0ed600212e1baa9ab5fce625cca18454db998/analysis/one_library.Rmd" target="_blank">87c0ed6</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+wflow_publish(“analysis/one_library.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/b98627b55e8ab7612a77e34b47512c223fa38604/docs/one_library.html" target="_blank">b98627b</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -704,44 +738,22 @@ user &lt;- setWorkingPath(user, PATH_TO_WORKING_DIR)</code></pre>
 <div id="generate-presentabsent-calls" class="section level2">
 <h2>Generate present/absent calls</h2>
 <p>Now that all objects have been created it is possible to run the generation of present/absent gene expression calls with one unique line of code</p>
-<pre class="r"><code>output_files_info &lt;- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)</code></pre>
-<pre><code>
-Querying Bgee to get intergenic release information...</code></pre>
-<pre><code>kallisto abundance file already exists for library SRX109273. Abundance file will be overwritten.</code></pre>
-<pre><code>File containing both transcriptomic and intergenic 
-                regions already exists.</code></pre>
-<pre><code>Index file already exist. No need to create a new one.</code></pre>
-<pre><code>Will run kallisto using this command line : /home/julien/Documents/git/BgeeCall//kallisto_linux-v0.45.0/kallisto quant -i /home/julien/Documents/git/BgeeCall//intergenic_0.1/7227/kallisto/transcriptome_Drosophila_melanogaster_BDGP6_28_cdna_all_fa_gz/transcriptome.idx -o /home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273/ -t 1 --bias  /home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273//SRR384924_1.fastq.gz /home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273//SRR384924_2.fastq.gz</code></pre>
-<pre><code>Note: importing `abundance.h5` is typically faster than `abundance.tsv`</code></pre>
-<pre><code>reading in files with read.delim (install &#39;readr&#39; package for speed up)</code></pre>
-<pre><code>1 
-summarizing abundance
-summarizing counts
-summarizing length
-Note: importing `abundance.h5` is typically faster than `abundance.tsv`
-reading in files with read.delim (install &#39;readr&#39; package for speed up)
-1 
-summarizing abundance
-summarizing counts
-summarizing length
-Generate present/absent expression calls.
-
-TPM cutoff for which 95% of the expressed genes are coding found at TPM = 0.742508</code></pre>
-<pre class="r"><code>output_files_info</code></pre>
+<pre class="r"><code>output_files_info &lt;- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)
+output_files_info</code></pre>
 <pre><code>$calls_tsv_path
-[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_level_abundance+calls.tsv&quot;
+[1] &quot;path/to/gene_level_abundance+calls.tsv&quot;
 
 $cutoff_info_file_path
-[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_cutoff_info_file.tsv&quot;
+[1] &quot;path/to/gene_cutoff_info_file.tsv&quot;
 
 $abundance_tsv
-[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//abundance.tsv&quot;
+[1] &quot;abundance.tsv&quot;
 
 $TPM_distribution_path
-[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_TPM_genic_intergenic+cutoff.pdf&quot;
+[1] &quot;path/to/gene_TPM_genic_intergenic+cutoff.pdf&quot;
 
 $S4_slots_summary
-[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//S4_slots_summary.tsv&quot;</code></pre>
+[1] &quot;path/to/S4_slots_summary.tsv&quot;</code></pre>
 <p>This command generates a list with a link to 5 generated files.</p>
 <ul>
 <li>calls_tsv_path : path to the file with abundance at gene level and present/absent expression calls</li>
