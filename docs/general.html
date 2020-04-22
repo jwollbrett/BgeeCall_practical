@@ -353,23 +353,35 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">BgeeCall_course</a>
+      <a class="navbar-brand" href="index.html">BgeeCall_practical</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">Contents</a>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="general.html">Software &amp; Data</a>
 </li>
 <li>
-  <a href="license.html">License</a>
+  <a href="classes_description.html">BgeeCall classes</a>
+</li>
+<li>
+  <a href="intergenic_releases.html">Intergenic releases</a>
+</li>
+<li>
+  <a href="one_library.html">One library</a>
+</li>
+<li>
+  <a href="list_libraries.html">List of libraries</a>
+</li>
+<li>
+  <a href="analysis.html">Downstream analysis</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/jwollbrett/BgeeCall_course">
+  <a href="https://github.com/jwollbrett/BgeeCall_practical">
     <span class="fa fa-github"></span>
      
     Source code
@@ -503,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1ee5392708f76b4d3d1c98c53cfaa87e775b255dtargetblank1ee5392a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1ee5392708f76b4d3d1c98c53cfaa87e775b255d" target="_blank">1ee5392</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree454071e069164efeffe6f23bcfd580e75e48aaf3targetblank454071ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/454071e069164efeffe6f23bcfd580e75e48aaf3" target="_blank">454071e</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1ee5392708f76b4d3d1c98c53cfaa87e775b255dtargetblank1ee5392a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree454071e069164efeffe6f23bcfd580e75e48aaf3targetblank454071ea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1ee5392708f76b4d3d1c98c53cfaa87e775b255d" target="_blank">1ee5392</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/454071e069164efeffe6f23bcfd580e75e48aaf3" target="_blank">454071e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -558,6 +570,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/454071e069164efeffe6f23bcfd580e75e48aaf3/analysis/general.Rmd" target="_blank">454071e</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+create backbone of the website
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/27658cbfa5f0cc2125bf159760d68b09b0bbb761/docs/general.html" target="_blank">27658cb</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -618,7 +664,7 @@ create software and data section
 </div>
 <div id="software-installation" class="section level2">
 <h2>Software installation</h2>
-<p>For this course, you will need R.3.6 or later, which you can download from <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> (if you are using RStudio cloud, that is recommended for this course, this is not necessary) and Bioconductor software version 3.10.</p>
+<p>For this practical, you will need R.3.6 or later, which you can download from <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> (if you are using RStudio cloud, that is recommended for this course, this is not necessary) and Bioconductor software version 3.10.</p>
 <p>First install BiocManager package, to help you to install and manage packages from Bioconductor project. The code below can be passed directly in the terminal.</p>
 <pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly=TRUE))
     install.packages(&quot;BiocManager&quot;)
