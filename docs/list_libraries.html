@@ -13,7 +13,7 @@
 
 <meta name="date" content="2020-04-22" />
 
-<title>list_libraries</title>
+<title>Generate calls for a list of RNA-Seq libraries</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -378,7 +378,7 @@ div.tocify {
   <a href="list_libraries.html">List of libraries</a>
 </li>
 <li>
-  <a href="analysis.html">Downstream analysis</a>
+  <a href="analysis.html">Processing data</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -386,7 +386,6 @@ div.tocify {
   <a href="https://github.com/jwollbrett/BgeeCall_practical">
     <span class="fa fa-github"></span>
      
-    Source code
   </a>
 </li>
       </ul>
@@ -398,7 +397,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">list_libraries</h1>
+<h1 class="title toc-ignore">Generate calls for a list of RNA-Seq libraries</h1>
 <h4 class="author">Julien</h4>
 <h4 class="date">2020-04-22</h4>
 
@@ -516,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree7f70814307b97e209b3d0e6edc5adc24cd5befd4targetblank7f70814a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/7f70814307b97e209b3d0e6edc5adc24cd5befd4" target="_blank">7f70814</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreebce26b35c7f8470f914ddc6e817a348ec393f284targetblankbce26b3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/bce26b35c7f8470f914ddc6e817a348ec393f284" target="_blank">bce26b3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree7f70814307b97e209b3d0e6edc5adc24cd5befd4targetblank7f70814a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreebce26b35c7f8470f914ddc6e817a348ec393f284targetblankbce26b3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/7f70814307b97e209b3d0e6edc5adc24cd5befd4" target="_blank">7f70814</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/bce26b35c7f8470f914ddc6e817a348ec393f284" target="_blank">bce26b3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -533,6 +532,13 @@ Note that you need to be careful to ensure that all relevant files for the analy
 <pre><code>
 Ignored files:
     Ignored:    .Rproj.user/
+
+Untracked files:
+    Untracked:  inputFile.tsv
+    Untracked:  release.tsv
+
+Unstaged changes:
+    Modified:   analysis/one_library.Rmd
 
 </code></pre>
 <p>
@@ -576,6 +582,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/bce26b35c7f8470f914ddc6e817a348ec393f284/analysis/list_libraries.Rmd" target="_blank">bce26b3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+wflow_publish(“analysis/list_libraries.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/d93bad7d16492a691076e38557227308f8350bfc/docs/list_libraries.html" target="_blank">d93bad7</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+update all html files
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/jwollbrett/BgeeCall_course/blob/454071e069164efeffe6f23bcfd580e75e48aaf3/analysis/list_libraries.Rmd" target="_blank">454071e</a>
 </td>
 <td>
@@ -614,6 +654,33 @@ create backbone of the website
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p>This page describe how to generate present/absent calls for a list of RNA-Seq library.</p>
+</div>
+<div id="bgeemetadata-and-kallistometadata-classes" class="section level2">
+<h2>BgeeMetadata and KallistoMetadata classes</h2>
+<p>These 2 classes are useful to tune how BgeeCall works. In this practical we will use default values. No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release). An object of the KallistoMetadata class has to be created to specify to download kallisto (as it is not installed on RStudio cloud).</p>
+<pre class="r"><code>kallisto &lt;- new(&quot;KallistoMetadata&quot;, download_kallisto = TRUE)</code></pre>
+</div>
+<div id="file-describing-usermetadata-objects" class="section level2">
+<h2>File describing UserMetadata objects</h2>
+<p>BgeeCall uses a tsv file to generate present/absent calls for more than one library. In this file each line will be used to generate one UserMetadata object. Each column of this file correspond to the value of one slot of the object. A template of the file is present in the root of the project. It is possible to edit it with the command</p>
+<pre class="r"><code>file.edit(&quot;inputFile.tsv&quot;)</code></pre>
+<p>The columns of this file are :</p>
+<ul>
+<li>species_id : The NCBI ID of the species.</li>
+<li>run_ids : The runs of the RNA-Seq library you want to use for the generation of the calls. Allows to generate expression calls for a subset of the runs of one RNA-Seq library. If not interested by this option, leave the column empty.</li>
+<li>reads_size : The size of the reads of your RNA-Seq library.</li>
+<li>rnaseq_lib_path : Path to the directory containing all fastq files generated for this library. This directory can only contains single-end runs or paired-end runs, not a mix of them.</li>
+<li>transcriptome_path : path to the transcriptome file.</li>
+<li>annotation_path : path to the genome annotation file. Works with GTF of GFF3 files.</li>
+<li>working_path : path to the working directory where results will be stored. Using the same working directory for different RNA-Seq libraries of the same species will allow to reuse previously generated data like the custom transcriptome index (generated from both transcriptome and reference intergenic sequences). By default the working path is defined by the <code>getwd()</code> function and correspond to the working directory of your R session. If not interested by this option, leave the column empty.</li>
+<li>output_directory : Both species results and RNA-Seq libraries results are by default stored at the same place using the value of the <code>working_path</code> column. However, this column allows you to define a different directory for RNA-Seq results. For instance it allows you to save calls information directly in the RNA-Seq directory. If not interested by this option, leave the column empty.</li>
+</ul>
+</div>
+<div id="generate-presentabsent-calls" class="section level2">
+<h2>Generate present/absent calls</h2>
+<p>Now that all objects and files have been created it is possible to run the generation of present/absent gene expression calls with one line of code</p>
+<pre class="r"><code>generate_calls_workflow(abundanceMetadata = kallisto, userFile = &quot;PATH_TO_FILE.tsv&quot;)</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -642,15 +709,50 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.6.1
+[1] BgeeCall_1.2.1  workflowr_1.6.1
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.3      rprojroot_1.3-2 digest_0.6.25   later_1.0.0    
- [5] R6_2.4.1        backports_1.1.5 git2r_0.26.1    magrittr_1.5   
- [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.5     fs_1.3.2       
-[13] promises_1.1.0  whisker_0.4     rmarkdown_2.1   tools_3.6.3    
-[17] stringr_1.4.0   glue_1.3.1      httpuv_1.5.2    xfun_0.12      
-[21] yaml_2.2.1      compiler_3.6.3  htmltools_0.4.0 knitr_1.28     </code></pre>
+ [1] Rcpp_1.0.3                  lattice_0.20-41            
+ [3] prettyunits_1.1.1           Rsamtools_2.2.3            
+ [5] Biostrings_2.54.0           assertthat_0.2.1           
+ [7] rprojroot_1.3-2             digest_0.6.25              
+ [9] BiocFileCache_1.10.2        R6_2.4.1                   
+[11] GenomeInfoDb_1.22.0         backports_1.1.5            
+[13] stats4_3.6.3                RSQLite_2.2.0              
+[15] evaluate_0.14               httr_1.4.1                 
+[17] pillar_1.4.3                zlibbioc_1.32.0            
+[19] rlang_0.4.5                 GenomicFeatures_1.38.2     
+[21] progress_1.2.2              curl_4.3                   
+[23] whisker_0.4                 blob_1.2.1                 
+[25] S4Vectors_0.24.3            Matrix_1.2-18              
+[27] rmarkdown_2.1               BiocParallel_1.20.1        
+[29] stringr_1.4.0               RCurl_1.98-1.1             
+[31] bit_1.1-15.2                biomaRt_2.42.0             
+[33] DelayedArray_0.12.2         compiler_3.6.3             
+[35] httpuv_1.5.2                rtracklayer_1.46.0         
+[37] xfun_0.12                   pkgconfig_2.0.3            
+[39] askpass_1.1                 BiocGenerics_0.32.0        
+[41] htmltools_0.4.0             tximport_1.14.0            
+[43] openssl_1.4.1               tidyselect_1.0.0           
+[45] SummarizedExperiment_1.16.1 tibble_2.1.3               
+[47] GenomeInfoDbData_1.2.2      matrixStats_0.55.0         
+[49] IRanges_2.20.2              XML_3.99-0.3               
+[51] crayon_1.3.4                dplyr_0.8.4                
+[53] dbplyr_1.4.2                later_1.0.0                
+[55] GenomicAlignments_1.22.1    bitops_1.0-6               
+[57] rappdirs_0.3.1              grid_3.6.3                 
+[59] jsonlite_1.6.1              DBI_1.1.0                  
+[61] git2r_0.26.1                magrittr_1.5               
+[63] stringi_1.4.6               XVector_0.26.0             
+[65] fs_1.3.2                    promises_1.1.0             
+[67] vctrs_0.2.3                 Rhdf5lib_1.8.0             
+[69] tools_3.6.3                 bit64_0.9-7                
+[71] Biobase_2.46.0              glue_1.3.1                 
+[73] purrr_0.3.3                 hms_0.5.3                  
+[75] parallel_3.6.3              yaml_2.2.1                 
+[77] rhdf5_2.30.1                AnnotationDbi_1.48.0       
+[79] GenomicRanges_1.38.0        memoise_1.1.0              
+[81] knitr_1.28                 </code></pre>
 </div>
 </div>
 
