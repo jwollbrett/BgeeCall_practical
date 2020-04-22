@@ -26,7 +26,8 @@ This section describes the different releases of reference intergenic that are a
 
 To list all available intergenic releases run the function :
 ```{r list_releases}
-list_intergenic_release()
+releases <- list_intergenic_release()
+subset(releases, select=c(release, releaseDate, description))
 ```
 
 In this list the first line always correspond to last official Bgee release.

@@ -7,7 +7,13 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r load-libs, message = FALSE, warning = FALSE, echo=FALSE}
+library(BgeeCall)
+```
+
 ## Introduction
+
+This page describe how to generate presetn/absent calls for one RNA-Seq library.
 
 ```{r}
 

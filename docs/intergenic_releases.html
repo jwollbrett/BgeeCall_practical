@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree077997579db72d3a179b1c26421f4c9b3d059017targetblank0779975a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/077997579db72d3a179b1c26421f4c9b3d059017" target="_blank">0779975</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeab08fb3c8689cb21df8c766f7686e9ac2bc5cf82targetblankab08fb3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82" target="_blank">ab08fb3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree077997579db72d3a179b1c26421f4c9b3d059017targetblank0779975a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeab08fb3c8689cb21df8c766f7686e9ac2bc5cf82targetblankab08fb3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/077997579db72d3a179b1c26421f4c9b3d059017" target="_blank">0779975</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82" target="_blank">ab08fb3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -535,6 +535,7 @@ Ignored files:
 
 Unstaged changes:
     Modified:   analysis/intergenic_releases.Rmd
+    Modified:   analysis/one_library.Rmd
 
 </code></pre>
 <p>
@@ -573,6 +574,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82/analysis/intergenic_releases.Rmd" target="_blank">ab08fb3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+update intergenic releases page
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82/docs/intergenic_releases.html" target="_blank">ab08fb3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+update intergenic releases page
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -640,33 +675,19 @@ create backbone of the website
 <div id="list-all-releases-available" class="section level2">
 <h2>List all releases available</h2>
 <p>To list all available intergenic releases run the function :</p>
-<pre class="r"><code>list_intergenic_release()</code></pre>
+<pre class="r"><code>releases &lt;- list_intergenic_release()</code></pre>
 <pre><code>Downloading release information of reference intergenic sequences...</code></pre>
-<pre><code>    release releaseDate                             FTPURL
-1       0.1  2018-12-21 ftp://ftp.bgee.org/intergenic/0.1/
-2       0.2  2019-02-07 ftp://ftp.bgee.org/intergenic/0.2/
-3 community  2019-07-22                                   
-4    custom  2019-07-22                                   
-                                                   referenceIntergenicFastaURL
-1 ftp://ftp.bgee.org/intergenic/0.1/ref_intergenic/SPECIES_ID_intergenic.fa.gz
-2 ftp://ftp.bgee.org/intergenic/0.2/ref_intergenic/SPECIES_ID_intergenic.fa.gz
-3                                                                             
-4                                                                             
-  minimumVersionBgeeCall
-1                  0.9.9
-2                  0.9.9
-3                  1.1.0
-4                  1.1.0
+<pre class="r"><code>subset(releases, select=c(release, releaseDate, description))</code></pre>
+<pre><code>    release releaseDate
+1       0.1  2018-12-21
+2       0.2  2019-02-07
+3 community  2019-07-22
+4    custom  2019-07-22
                                                                                                                                                                                                     description
 1                                                                                                                                                                  intergenic regions used to generate Bgee 14.
 2                                                                          cleaned intergenic sequences based on release 0.1 (remove blocks of Ns longer than 100 and sequences containing more than 5% of Ns).
 3                                                                           Release allowing to access to all reference intergenic sequences generated by the community and not present in Bgee for the moment.
-4 Release allowing to use your own FASTA reference intergenic sequences. When this release is selected BgeeCall will use the sequences at UserMetadata@custom_intergenic_path to generate present/absent calls.
-                                                                           messageToUsers
-1                                                                                        
-2                         be careful, this intergenic release has not been tested by Bgee
-3 These reference intergenic sequences have not been generated by Bgee. Use with caution.
-4                              You decided to use your own reference intergenic sequences</code></pre>
+4 Release allowing to use your own FASTA reference intergenic sequences. When this release is selected BgeeCall will use the sequences at UserMetadata@custom_intergenic_path to generate present/absent calls.</code></pre>
 <p>In this list the first line always correspond to last official Bgee release.</p>
 </div>
 <div id="bgee-releases" class="section level2">
