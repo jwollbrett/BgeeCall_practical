@@ -1,4 +1,4 @@
-# BgeeCall_course
+# BgeeCall
 
 A [workflowr][] project.
 

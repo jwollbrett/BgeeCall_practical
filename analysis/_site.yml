@@ -1,7 +1,7 @@
-name: BgeeCall_practical
+name: BgeeCall
 output_dir: ../docs
 navbar:
-  title: BgeeCall_practical
+  title: BgeeCall
   left:
   - text: Contents
     href: index.html
