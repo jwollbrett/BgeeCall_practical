@@ -1,11 +1,38 @@
 ---
-title: "Home"
+title: "Contents"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
     toc: false
-editor_options:
-  chunk_output_type: console
 ---
 
-Welcome to my research website.
+- [Software & Data](general.html):
+    - Software requirements
+    - Data
+
+- [BgeeCall Classes](classes_description.html):
+    - KallistoMetadata
+    - BgeeMetadata
+    - UsetMetadata
+
+- [Intergenic releases](intergenic_releases.html):
+    - Bgee releases
+    - Community
+    - Custom
+
+- [Calls for one library](one_library.html):
+    - KallistoMetadata object
+    - BgeeMetadata object
+    - UserMetadata object
+    - Run the workflow
+   
+- [Calls for a list of libraries](list_libraries.html):
+    - KallistoMetadata object
+    - BgeeMetadata object
+    - userMetadataInfo file
+    - Run the workflow
+    
+- [Downstream analysis](analysis.html):
+    - Load data
+    - PCA
+    - Differential expression

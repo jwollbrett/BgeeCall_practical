@@ -1,4 +1,4 @@
-name: BgeeCall_course
+name: BgeeCall_practical
 output_dir: ../docs
 navbar:
   title: BgeeCall_practical
@@ -7,10 +7,20 @@ navbar:
     href: index.html
   - text: Software & Data
     href: general.html
+  - text: BgeeCall classes
+    href: classes_description.html
+  - text: Intergenic releases
+    href: intergenic_releases.html
+  - text: One library
+    href: one_library.html
+  - text: List of libraries
+    href: list_libraries.html
+  - text: Downstream analysis
+    href: analysis.html
   right:
   - icon: fa-github
     text: Source code
-    href: https://github.com/jwollbrett/BgeeCall_course
+    href: https://github.com/jwollbrett/BgeeCall_practical
 output:
   workflowr::wflow_html:
     toc: yes

@@ -13,7 +13,7 @@ output:
 
 ## Software installation
 
-For this course, you will need R.3.6 or later, which you can download from https://cran.r-project.org/ (if you are using RStudio cloud, that is recommended for this course, this is not necessary) and Bioconductor software version 3.10.
+For this practical, you will need R.3.6 or later, which you can download from https://cran.r-project.org/ (if you are using RStudio cloud, that is recommended for this course, this is not necessary) and Bioconductor software version 3.10.
 
 First install BiocManager package, to help you to install and manage packages from Bioconductor project. The code below can be passed directly in the terminal.
 
