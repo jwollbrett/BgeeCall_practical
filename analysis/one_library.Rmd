@@ -66,13 +66,11 @@ This command generates a list with a link to 5 generated files.
 * TPM_distribution_path : path to a PDF file containing a plot of abundance distribution
 * S4_slots_sumary : path to the file with value of most important slots of the 3 BgeeCall classes
 
-It is possible to visualize text files with the command file.edit(PATH_TO_FILE).
-It is possible to open PDF files with the function openPDF(PATH_TO_FILE).
+It is possible to open text files with the command file.edit(PATH_TO_FILE).
+
 For example :
 ```{r show_calls_file, eval = FALSE}
 # open calls tsv file
-file.show(output_files_info$calls_tsv_path)
-# open pdf file in your. Not available on RStudio cloud
-openPDF(output_files_info$TPM_distribution_path)
+file.edit(output_files_info$calls_tsv_path)
 ```
 
