@@ -1,14 +1,12 @@
 name: BgeeCall_course
 output_dir: ../docs
 navbar:
-  title: BgeeCall_course
+  title: BgeeCall_practical
   left:
-  - text: Home
+  - text: Contents
     href: index.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
+  - text: Software & Data
+    href: general.html
   right:
   - icon: fa-github
     text: Source code
