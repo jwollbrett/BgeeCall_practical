@@ -15,11 +15,11 @@ navbar:
     href: one_library.html
   - text: List of libraries
     href: list_libraries.html
-  - text: Downstream analysis
+  - text: Processing data
     href: analysis.html
   right:
   - icon: fa-github
-    text: Source code
+    text:
     href: https://github.com/jwollbrett/BgeeCall_practical
 output:
   workflowr::wflow_html:

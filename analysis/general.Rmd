@@ -41,8 +41,10 @@ Note: If you want, you can also install RStudio software, which can be download 
 ## Data
 
 The data used during this course will come from D. melanogaster and consists of :
+
 * 2 RNA-Seq libraries (fastq files)
 * the transcriptome from ensembl 
 * the gtf annotation file from ensembl
+* calls already generated for 2 fastq libraries (in order to keep time under 1 hour)
  
   

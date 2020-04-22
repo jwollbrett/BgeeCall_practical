@@ -32,7 +32,7 @@ output:
     - userMetadataInfo file
     - Run the workflow
     
-- [Downstream analysis](analysis.html):
+- [Processing data](analysis.html):
     - Load data
     - PCA
     - Differential expression
