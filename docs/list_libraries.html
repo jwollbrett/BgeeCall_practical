@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreebce26b35c7f8470f914ddc6e817a348ec393f284targetblankbce26b3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/bce26b35c7f8470f914ddc6e817a348ec393f284" target="_blank">bce26b3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree42c797985bf33433507680b7b42ea8b0a49d002etargetblank42c7979a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/42c797985bf33433507680b7b42ea8b0a49d002e" target="_blank">42c7979</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreebce26b35c7f8470f914ddc6e817a348ec393f284targetblankbce26b3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree42c797985bf33433507680b7b42ea8b0a49d002etargetblank42c7979a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/bce26b35c7f8470f914ddc6e817a348ec393f284" target="_blank">bce26b3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/42c797985bf33433507680b7b42ea8b0a49d002e" target="_blank">42c7979</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -577,6 +577,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/42c797985bf33433507680b7b42ea8b0a49d002e/analysis/list_libraries.Rmd" target="_blank">42c7979</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+wflow_publish(“analysis/list_libraries.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/fa1d5bed98431e439cbc8f585107b66d9bc3a9ce/docs/list_libraries.html" target="_blank">fa1d5be</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -680,7 +714,7 @@ create backbone of the website
 <div id="generate-presentabsent-calls" class="section level2">
 <h2>Generate present/absent calls</h2>
 <p>Now that all objects and files have been created it is possible to run the generation of present/absent gene expression calls with one line of code</p>
-<pre class="r"><code>generate_calls_workflow(abundanceMetadata = kallisto, userFile = &quot;PATH_TO_FILE.tsv&quot;)</code></pre>
+<pre class="r"><code>generate_calls_workflow(abundanceMetadata = kallisto, userFile = &quot;inputFile.tsv&quot;)</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
