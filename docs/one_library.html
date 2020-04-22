@@ -406,7 +406,7 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -415,7 +415,7 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -427,7 +427,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-04-22
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>BgeeCall_practical/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -443,12 +443,12 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -515,16 +515,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeab08fb3c8689cb21df8c766f7686e9ac2bc5cf82targetblankab08fb3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82" target="_blank">ab08fb3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef0127b0ffd052a247953fa8483b7ddec63199535targetblankf0127b0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f0127b0ffd052a247953fa8483b7ddec63199535" target="_blank">f0127b0</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeab08fb3c8689cb21df8c766f7686e9ac2bc5cf82targetblankab08fb3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef0127b0ffd052a247953fa8483b7ddec63199535targetblankf0127b0a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ab08fb3c8689cb21df8c766f7686e9ac2bc5cf82" target="_blank">ab08fb3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f0127b0ffd052a247953fa8483b7ddec63199535" target="_blank">f0127b0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -535,10 +535,6 @@ Ignored files:
 
 Untracked files:
     Untracked:  release.tsv
-
-Unstaged changes:
-    Modified:   analysis/intergenic_releases.Rmd
-    Modified:   analysis/one_library.Rmd
 
 </code></pre>
 <p>
@@ -577,6 +573,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f0127b0ffd052a247953fa8483b7ddec63199535/analysis/one_library.Rmd" target="_blank">f0127b0</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+wflow_publish(“analysis/one_library.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/5c7fa4b69dc0c20ee3cef1fea882dd4b1f758154/analysis/one_library.Rmd" target="_blank">5c7fa4b</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+update intergenic release page
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/5c7fa4b69dc0c20ee3cef1fea882dd4b1f758154/docs/one_library.html" target="_blank">5c7fa4b</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-22
+</td>
+<td>
+update intergenic release page
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -637,7 +684,77 @@ create backbone of the website
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This page describe how to generate presetn/absent calls for one RNA-Seq library.</p>
+<p>This page describe how to generate present/absent calls for one RNA-Seq library.</p>
+</div>
+<div id="bgeemetadata-and-kallistometadata-classes" class="section level2">
+<h2>BgeeMetadata and KallistoMetadata classes</h2>
+<p>These 2 classes are useful to tune how BgeeCall works. In this practical we will use default values. No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release). An object of the KallistoMetadata class has to be created to specify is to download kallisto (as it is not installed on RStudio cloud).</p>
+<pre class="r"><code>kallisto &lt;- new(&quot;KallistoMetadata&quot;, download_kallisto = TRUE)</code></pre>
+</div>
+<div id="usermetadata-class" class="section level2">
+<h2>UserMetadata class</h2>
+<p>An object of this class has to be created and value of some slots have to be modified to fit your data</p>
+<pre class="r"><code>user &lt;- new(&quot;UserMetadata&quot;, species_id = NCBI_TAXON_ID)
+user &lt;- setRNASeqLibPath(user, PATH_TO_RNASEQ_LIBRARY_DIR)
+user &lt;- setTranscriptomeFromFile(user, PATH_TO_TRANSCRIPTOME)
+user &lt;- setAnnotationFromFile(user, PATH_TO_GTF_FILE)
+user &lt;- setOutputDir(user, PATH_TO_OUTPUT_DIR)
+user &lt;- setWorkingPath(user, PATH_TO_WORKING_DIR)</code></pre>
+</div>
+<div id="generate-presentabsent-calls" class="section level2">
+<h2>Generate present/absent calls</h2>
+<p>Now that all objects have been created it is possible to run the generation of present/absent gene expression calls with one unique line of code</p>
+<pre class="r"><code>output_files_info &lt;- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)</code></pre>
+<pre><code>
+Querying Bgee to get intergenic release information...</code></pre>
+<pre><code>kallisto abundance file already exists for library SRX109273. Abundance file will be overwritten.</code></pre>
+<pre><code>File containing both transcriptomic and intergenic 
+                regions already exists.</code></pre>
+<pre><code>Index file already exist. No need to create a new one.</code></pre>
+<pre><code>Will run kallisto using this command line : /home/julien/Documents/git/BgeeCall//kallisto_linux-v0.45.0/kallisto quant -i /home/julien/Documents/git/BgeeCall//intergenic_0.1/7227/kallisto/transcriptome_Drosophila_melanogaster_BDGP6_28_cdna_all_fa_gz/transcriptome.idx -o /home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273/ -t 1 --bias  /home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273//SRR384924_1.fastq.gz /home/julien/Documents/temp/test_bgeeCall/7227/fastq/SRX109273//SRR384924_2.fastq.gz</code></pre>
+<pre><code>Note: importing `abundance.h5` is typically faster than `abundance.tsv`</code></pre>
+<pre><code>reading in files with read.delim (install &#39;readr&#39; package for speed up)</code></pre>
+<pre><code>1 
+summarizing abundance
+summarizing counts
+summarizing length
+Note: importing `abundance.h5` is typically faster than `abundance.tsv`
+reading in files with read.delim (install &#39;readr&#39; package for speed up)
+1 
+summarizing abundance
+summarizing counts
+summarizing length
+Generate present/absent expression calls.
+
+TPM cutoff for which 95% of the expressed genes are coding found at TPM = 0.742508</code></pre>
+<pre class="r"><code>output_files_info</code></pre>
+<pre><code>$calls_tsv_path
+[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_level_abundance+calls.tsv&quot;
+
+$cutoff_info_file_path
+[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_cutoff_info_file.tsv&quot;
+
+$abundance_tsv
+[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//abundance.tsv&quot;
+
+$TPM_distribution_path
+[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//gene_TPM_genic_intergenic+cutoff.pdf&quot;
+
+$S4_slots_summary
+[1] &quot;/home/julien/Documents/temp/test_bgeeCall/output/7227/SRX109273//S4_slots_summary.tsv&quot;</code></pre>
+<p>This command generates a list with a link to 5 generated files.</p>
+<ul>
+<li>calls_tsv_path : path to the file with abundance at gene level and present/absent expression calls</li>
+<li>cutoff_info_file_path : path to the file with metadata about TPM cutoff (TPM cutoff, protein coding genes present, etc.)</li>
+<li>abundance_tsv : path to the kallisto output file with abundance at transcript level</li>
+<li>TPM_distribution_path : path to a PDF file containing a plot of abundance distribution</li>
+<li>S4_slots_sumary : path to the file with value of most important slots of the 3 BgeeCall classes</li>
+</ul>
+<p>It is possible to visualize text files with the command file.edit(PATH_TO_FILE). It is possible to open PDF files with the function openPDF(PATH_TO_FILE). For example :</p>
+<pre class="r"><code># open calls tsv file
+file.show(output_files_info$calls_tsv_path)
+# open pdf file in your. Not available on RStudio cloud
+openPDF(output_files_info$TPM_distribution_path)</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
