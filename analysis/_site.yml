@@ -20,7 +20,7 @@ navbar:
   right:
   - icon: fa-github
     text:
-    href: https://github.com/jwollbrett/BgeeCall_practical
+    href: https://github.com/BgeeDB/BgeeCall
 output:
   workflowr::wflow_html:
     toc: yes
