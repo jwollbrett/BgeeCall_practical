@@ -30,7 +30,7 @@ kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
 BgeeCall uses a tsv file to generate present/absent calls for more than one library.
 In this file each line will be used to generate one UserMetadata object.
 Each column of this file correspond to the value of one slot of the object.
-A template of the file is present in the root of the project. It is possible to edit it with the command
+A template of the file is present in the root of the project (inputFile.tsv). It is possible to edit it in RStudio cloud with the command file.edit("inputFile.tsv")
 
 ```{r copy_template, eval=FALSE}
 file.edit("inputFile.tsv")
@@ -39,13 +39,12 @@ file.edit("inputFile.tsv")
 The columns of this file are :
 
 * species_id : The NCBI ID of the species.
-* run_ids : The runs of the RNA-Seq library you want to use for the generation of the calls. Allows to generate expression calls for a subset of the runs of one RNA-Seq library. If not interested by this option, leave the column empty.
 * reads_size : The size of the reads of your RNA-Seq library.
-* rnaseq_lib_path : Path to the directory containing all fastq files generated for this library. This directory can only contains single-end runs or paired-end runs, not a mix of them.
+* rnaseq_lib_path : Path to the directory containing fastq files of the library.
 * transcriptome_path : path to the transcriptome file.
 * annotation_path : path to the genome annotation file. Works with GTF of GFF3 files.
-* working_path : path to the working directory where results will be stored. Using the same working directory for different RNA-Seq libraries of the same species will allow to reuse previously generated data like the custom transcriptome index (generated from both transcriptome and reference intergenic sequences). By default the working path is defined by the `getwd()` function and correspond to the working directory of your R session. If not interested by this option, leave the column empty.
-* output_directory : Both species results and RNA-Seq libraries results are by default stored at the same place using the value of the `working_path` column. However, this column allows you to define a different directory for RNA-Seq results. For instance it allows you to save calls information directly in the RNA-Seq directory. If not interested by this option, leave the column empty.
+* working_path : path to the working directory where results at species level will be stored (kallisto index, transcriptome with intergenic, etc.)
+* output_directory : path to output directory of the RNA-Seq library results (e.g. /path/to/output/LIBRARY_ID/)
 
 ## Generate present/absent calls
 
@@ -55,5 +54,3 @@ Now that all objects and files have been created it is possible to run the gener
 ```{r run_workflow, eval=FALSE}
 generate_calls_workflow(abundanceMetadata = kallisto, userFile = "inputFile.tsv")
 ```
-
-
