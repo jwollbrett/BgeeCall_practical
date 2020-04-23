@@ -44,7 +44,7 @@ The columns of this file are :
 * transcriptome_path : path to the transcriptome file.
 * annotation_path : path to the genome annotation file. Works with GTF of GFF3 files.
 * working_path : path to the working directory where results at species level will be stored (kallisto index, transcriptome with intergenic, etc.)
-* output_directory : path to output directory of the RNA-Seq library results (e.g. /path/to/output/LIBRARY_ID/)
+* output_directory : path to output directory of the RNA-Seq library results (e.g. /path/to/output/_LIBRARY_ID_/)
 
 ## Generate present/absent calls
 
