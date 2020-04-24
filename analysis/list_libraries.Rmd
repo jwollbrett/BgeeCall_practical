@@ -34,11 +34,7 @@ kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
 BgeeCall uses a tsv file to generate present/absent calls for more than one library.
 In this file each line will be used to generate one UserMetadata object.
 Each column of this file correspond to the value of one slot of the object.
-A template of the file is present in the root of the project (inputFile.tsv). It is possible to edit it in RStudio cloud with the command file.edit("inputFile.tsv")
-
-```{r copy_template, eval=FALSE}
-file.edit("inputFile.tsv")
-```
+A template of the file called _inputFile.tsv_ is present in the input_files directory of the project.
 
 The columns of this file are :
 
@@ -48,7 +44,7 @@ The columns of this file are :
 * _transcriptome_path_ : path to the transcriptome file.
 * _annotation_path_ : path to the genome annotation file. Works with GTF of GFF3 files.
 * _working_path_ : path to the working directory where results at species level will be stored (kallisto index, transcriptome with intergenic, etc.)
-* _output_directory_ : path to output directory of the RNA-Seq library results (e.g. /path/to/output/_LIBRARY_ID_/)
+* _output_directory_ : path to directory where calls of one RNA-Seq library have to be written (e.g. /path/to/output/_LIBRARY_ID_/)
 
 ## Generate present/absent calls
 
@@ -56,5 +52,5 @@ Now that all objects and files have been created it is possible to run the gener
 
 
 ```{r run_workflow, eval=FALSE}
-generate_calls_workflow(abundanceMetadata = kallisto, userFile = "inputFile.tsv")
+generate_calls_workflow(abundanceMetadata = kallisto, userFile = "PATH_TO_INPUT_FILE.tsv")
 ```

@@ -22,7 +22,7 @@ This page describe how to generate present/absent calls for one RNA-Seq library.
 ## BgeeMetadata and KallistoMetadata classes
 
 These 2 classes are useful to tune how BgeeCall works. 
-No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).  
+No need to create an object of the class BgeeMetada as only default values will be used during this practical (last official Bgee intergenic release).  
 An object of the KallistoMetadata class has to be created to specify to download kallisto (as it is not installed on RStudio cloud).
 
 ```{r kallisto_object}
@@ -67,14 +67,5 @@ This command generates a list with a link to 5 generated files.
 * _calls_tsv_path_ : path to the file with abundance at gene level and present/absent expression calls
 * _cutoff_info_file_path_ : path to the file with metadata about TPM cutoff (TPM cutoff, protein coding genes present, etc.)
 * _abundance_tsv_ : path to the kallisto output file with abundance at transcript level
-* _TPM_distribution_path_ : path to a PDF file containing a plot of abundance distribution
+* _TPM_distribution_path_ : path to a PDF file containing a plot of abundance distribution with a line representing the TPM cutoff.
 * _S4_slots_sumary_ : path to the file with value of most important slots of the 3 BgeeCall classes
-
-It is possible to open text files in RStudio with the command file.edit(PATH_TO_FILE).
-
-For example :
-```{r show_calls_file, eval = FALSE}
-# open calls tsv file
-file.edit(output_files_info$calls_tsv_path)
-```
-

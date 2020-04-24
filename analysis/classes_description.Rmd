@@ -14,7 +14,7 @@ editor_options:
 
 ## Introduction
 
-Present/absent expression calls will be generated using objects of 3 R classes specific to the BgeeCall package.
+Present/absent gene expression calls can be generated using objects of 3 R classes specific to the BgeeCall package.
 These classes contain an important number of slots (attributes) in order to tune as much as possible how present/absent expression calls are generated.
 In this section we will describe these classes and their most important slots. **slots written in bold type will be used during the exercices**.
 
@@ -38,7 +38,7 @@ Most important slot is :
 ## UserMetadata
 
 Both KallistoMetadata and BgeeMetadata could be used with default values.  
-The object of class UserMetadata is the only one it is necessary to modify. It contains information specific to the analysis the user want to run.  
+The object of class UserMetadata is the only one it is necessary to modify. It contains information specific to the analysis the user wants to run.  
 Most important slots are :
 
 * _**species_id**_ : The NCBI Taxon Id of the species for which the calls will be generated
@@ -49,5 +49,5 @@ Most important slots are :
 * _**working_path**_ : path to the directory where species specific intermediate files will be generated (e.g. kallisto index, transcriptome with intergenic sequences, etc.)
 * _**output_dir**_ : path to the directory where files specific to the library will be generated (e.g. calls, kallisto output, etc.)
 
-The slot _transcriptome_object_ has to be setup with one of the methods _**setTranscriptomeFromFile()**_ or _setTranscriptomeFromObject()_  
-The slot _annotation_object_ has to be setup with one of the methods _**setAnnotationFromFile()**_ or _setAnnotationFromObject()_
+The slot _transcriptome_object_ has to be initialized with one of the methods _**setTranscriptomeFromFile()**_ or _setTranscriptomeFromObject()_  
+The slot _annotation_object_ has to be initialized with one of the methods _**setAnnotationFromFile()**_ or _setAnnotationFromObject()_

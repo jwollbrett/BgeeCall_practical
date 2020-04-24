@@ -49,5 +49,7 @@ The data used during this course will come from D. melanogaster and consists of 
 * the transcriptome from ensembl 
 * the gtf annotation file from ensembl
 * calls already generated for 2 fastq libraries (in order to keep time under 1 hour)
+
+All data necessary to enjoy this practical are available [here](ftp://ftp.bgee.org/course/BgeeCall_R_project.tar.gz)
  
   
