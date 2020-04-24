@@ -1,5 +1,10 @@
 ---
 title: "Contents"
+author: 
+- name: Julien Wollbrett
+  email: bgee[at]sib.swiss
+  affiliation:
+    &SIB Swiss Institut of Bioinformatics (SIB), Université de Lausanne 
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:

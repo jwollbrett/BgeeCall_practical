@@ -1,6 +1,10 @@
 ---
 title: "Generate calls for one RNA-Seq library"
-author: "Julien"
+author: 
+- name: Julien Wollbrett
+  email: bgee[at]sib.swiss
+  affiliation:
+    &SIB Swiss Institut of Bioinformatics (SIB), Université de Lausanne 
 date: "2020-04-22"
 output: workflowr::wflow_html
 editor_options:

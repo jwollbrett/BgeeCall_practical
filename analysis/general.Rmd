@@ -2,13 +2,16 @@
 title: "Software & Data"
 author: 
 - name: Julien Wollbrett
+  email: bgee[at]sib.swiss
   affiliation:
-  - &SIB Swiss Institut of Bioinformatics (SIB)
-  - &DEE Department of ecology and evolution, University of Lausanne, Switzerland
+    &SIB Swiss Institut of Bioinformatics (SIB), Université de Lausanne 
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
   html_document:
     toc: true
+    pandoc_args:
+      - '--lua-filter=scholarly-metadata.lua'
+      - '--lua-filter=author-info-blocks.lua'
 ---
 
 ## Software installation
