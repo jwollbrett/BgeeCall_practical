@@ -9,7 +9,88 @@ editor_options:
 
 ## Introduction
 
-```{r}
+This section present R code of downstream analysis that can be done using genes with presence of expression.
 
+## PCA
+
+
+```{r prepare data, eval=FALSE}
+# read file with gene as rows and libraries as columns
+file <- "/cloud/project/input_files/downstream_analysis/present_TPMs.tsv"
+present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
+
+# transpose data.frame to have genes as columns
+data_for_PCA <- t(present_TPMs)
+# calculate matrix of dissimilarities
+# k = the maximum dimension of the space which the data are to be represented in; must be in {1, 2, …, n-1}
+# eig = indicates whether eigenvalues should be returned
+mds <- cmdscale(dist(data_for_PCA), k=3, eig=TRUE)
+proportion_eig <- mds$eig * 100 / sum(mds$eig)
+
+# plot proportion of variance explained by each dimension
+png(file="PCA_prop_explained_variance.png")
+barplot(proportion_eig, las=1, ylim=c(0,100), xlab="Dimensions", ylab="Proportion of explained variance (%)",
+        y.axis=NULL, col="darkgrey", main = "Proportion of variance explained by each dimension")
+dev.off()
+
+# calculate matrix of dissimilarities
+mds <- cmdscale(dist(data_for_PCA))
+#PCA plot for the 2 first dimensions
+png(file="PCA_dim_1vs2.png")
+plot(mds[,1], -mds[,2], type="n", xlim=c(-1.5e+05,1.5e+05), xlab="Dimension 1", ylab="Dimension 2",
+     main="PCA plot of the 2 principal dimensions")
+text(mds[,1], -mds[,2], rownames(mds), cex=0.8)
+dev.off()
+```
+
+## Diffrential expression
+
+```{r}
+# load required libraries
+library(edgeR)
+
+# read file with gene as rows and libraries counts as columns
+file_counts <- "../../temp/test_bgeeCall/output/7227/present_counts.tsv"
+present_counts <- read.table(file = file_counts, header = TRUE, sep = "\t")
+genes <- rownames(present_counts)
+#read file with library annotations
+file_annotations <- "../../temp/test_bgeeCall/output/7227/library_annotations.tsv"
+library_annotations <- read.table(file = file_annotations, header = TRUE, sep = "\t")
+
+# create list of grouping parameters (here sex)
+group <- NULL
+for(i in seq(colnames(present_counts))){
+  group[i] <- as.character(library_annotations[library_annotations$Library.ID ==colnames(present_counts)[i],]$Sex)
+}
+# use group as names of the present_count data.frame
+colnames(present_counts) <- group
+
+# create the design matrix for limma
+design_matrix <- model.matrix(~0+group)
+colnames(design_matrix)<- gsub("group","",colnames(design_matrix))
+# calculate the normalization factors between libraries
+normalization_factors <- calcNormFactors(present_counts)
+# use voom to calculate normalised read counts
+voom_output <- voom(present_counts,design_matrix,lib.size=colSums(present_counts)*normalization_factors)
+# extract the normalised read counts
+normalised_counts <- voom_output$E
+
+# fit linear model for each gene given a series of libraries
+fit <- lmFit(voom_output, design_matrix)
+# construct the contrast matrix corresponding to specified contrasts of a set of parameters
+cont.matrix <- makeContrasts(male-female,levels=design_matrix)
+# compute estimated coefficients and standard errors for a given set of contrasts
+fit <- contrasts.fit(fit, cont.matrix)
+
+# compute moderated t-statistics of differential expression by empirical Bayes moderation of the standard errors
+fit <- eBayes(fit)
+options(digits=3)
+
+# use the topTable function to order genes and filter by p-value and log fold change
+results <- topTable(fit, coef="male - female", number = nrow(present_counts), p.value = 0.05, lfc = 2)
+
+#write differentialy expressed genes in a file
+#write.table(x = results, file = "/cloud/project/output_files/dif_expressed_genes.tsv", row.names = TRUE, quote = FALSE, sep="\t")
+write.table(x = results, file = "dif_expressed_genes.tsv", row.names = TRUE, quote = FALSE, sep="\t")
 ```
 

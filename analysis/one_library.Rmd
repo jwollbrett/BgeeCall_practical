@@ -17,8 +17,8 @@ This page describe how to generate present/absent calls for one RNA-Seq library.
 
 ## BgeeMetadata and KallistoMetadata classes
 
-These 2 classes are useful to tune how BgeeCall works. In this practical we will use default values.
-No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).
+These 2 classes are useful to tune how BgeeCall works. 
+No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).  
 An object of the KallistoMetadata class has to be created to specify to download kallisto (as it is not installed on RStudio cloud).
 
 ```{r kallisto_object}
@@ -27,10 +27,10 @@ kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
 
 ## UserMetadata class
 
-An object of this class has to be created and value of some slots have to be modified to fit your data
+An object of this class has to be created and value of some slots have to be modified to run BgeeCall
 
 ```{r user_object, eval=FALSE}
-user <- new("UserMetadata", species_id = "NCBI_TAXON_ID")
+user <- new("UserMetadata", species_id = "NCBI_TAXON_ID", reads_size=READS_SIZE)
 user <- setRNASeqLibPath(user, "PATH_TO_RNASEQ_LIBRARY_DIR")
 user <- setTranscriptomeFromFile(user, "PATH_TO_TRANSCRIPTOME")
 user <- setAnnotationFromFile(user, "PATH_TO_GTF_FILE")
@@ -60,11 +60,11 @@ output_files_info
 
 This command generates a list with a link to 5 generated files.
 
-* calls_tsv_path : path to the file with abundance at gene level and present/absent expression calls
-* cutoff_info_file_path : path to the file with metadata about TPM cutoff (TPM cutoff, protein coding genes present, etc.)
-* abundance_tsv : path to the kallisto output file with abundance at transcript level
-* TPM_distribution_path : path to a PDF file containing a plot of abundance distribution
-* S4_slots_sumary : path to the file with value of most important slots of the 3 BgeeCall classes
+* _calls_tsv_path_ : path to the file with abundance at gene level and present/absent expression calls
+* _cutoff_info_file_path_ : path to the file with metadata about TPM cutoff (TPM cutoff, protein coding genes present, etc.)
+* _abundance_tsv_ : path to the kallisto output file with abundance at transcript level
+* _TPM_distribution_path_ : path to a PDF file containing a plot of abundance distribution
+* _S4_slots_sumary_ : path to the file with value of most important slots of the 3 BgeeCall classes
 
 It is possible to open text files in RStudio with the command file.edit(PATH_TO_FILE).
 

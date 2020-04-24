@@ -17,8 +17,8 @@ This page describe how to generate present/absent calls for a list of RNA-Seq li
 
 ## BgeeMetadata and KallistoMetadata classes
 
-These 2 classes are useful to tune how BgeeCall works. In this practical we will use default values.
-No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).
+These 2 classes are useful to tune how BgeeCall works.  
+No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).  
 An object of the KallistoMetadata class has to be created to specify to download kallisto (as it is not installed on RStudio cloud).
 
 ```{r kallisto_object}
@@ -38,13 +38,13 @@ file.edit("inputFile.tsv")
 
 The columns of this file are :
 
-* species_id : The NCBI ID of the species.
-* reads_size : The size of the reads of your RNA-Seq library.
-* rnaseq_lib_path : Path to the directory containing fastq files of the library.
-* transcriptome_path : path to the transcriptome file.
-* annotation_path : path to the genome annotation file. Works with GTF of GFF3 files.
-* working_path : path to the working directory where results at species level will be stored (kallisto index, transcriptome with intergenic, etc.)
-* output_directory : path to output directory of the RNA-Seq library results (e.g. /path/to/output/_LIBRARY_ID_/)
+* _species_id_ : The NCBI ID of the species.
+* _reads_size_ : The size of the reads of the RNA-Seq library.
+* _rnaseq_lib_path_ : Path to the directory containing fastq files of the library.
+* _transcriptome_path_ : path to the transcriptome file.
+* _annotation_path_ : path to the genome annotation file. Works with GTF of GFF3 files.
+* _working_path_ : path to the working directory where results at species level will be stored (kallisto index, transcriptome with intergenic, etc.)
+* _output_directory_ : path to output directory of the RNA-Seq library results (e.g. /path/to/output/_LIBRARY_ID_/)
 
 ## Generate present/absent calls
 

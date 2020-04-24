@@ -17,6 +17,8 @@ navbar:
     href: list_libraries.html
   - text: Processing data
     href: analysis.html
+  - text: Exercices
+    href: exercices.html
   right:
   - icon: fa-github
     text:
