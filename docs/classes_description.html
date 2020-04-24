@@ -460,16 +460,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -480,6 +480,7 @@ Ignored files:
     Ignored:    .Rproj.user/
 
 Untracked files:
+    Untracked:  .~lock.dif_expressed_genes.tsv#
     Untracked:  PCA_dim_1vs2.png
     Untracked:  PCA_prop_explained_variance.png
     Untracked:  analyis.R
@@ -525,6 +526,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/b26eac3b1e2386828e7de2d239e56792ef5cb1cd/analysis/classes_description.Rmd" target="_blank">b26eac3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/64f7db81b60553d5279a354b5c77bff569f65fcd/docs/classes_description.html" target="_blank">64f7db8</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -704,7 +739,7 @@ create backbone of the website
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Present/absent expression calls will be generated using objects of 3 R classes specific to the BgeeCall package. These classes contain an important number of slots (attributes) in order to tune as much as possible how present/absent expression calls are generated. In this section we will describe these classes and their most important slots. <strong>slots written in bold type will be used during the exercices</strong>.</p>
+<p>Present/absent gene expression calls can be generated using objects of 3 R classes specific to the BgeeCall package. These classes contain an important number of slots (attributes) in order to tune as much as possible how present/absent expression calls are generated. In this section we will describe these classes and their most important slots. <strong>slots written in bold type will be used during the exercices</strong>.</p>
 </div>
 <div id="kallistometadata" class="section level2">
 <h2>KallistoMetadata</h2>
@@ -728,7 +763,7 @@ Most important slot is :</p>
 <div id="usermetadata" class="section level2">
 <h2>UserMetadata</h2>
 <p>Both KallistoMetadata and BgeeMetadata could be used with default values.<br />
-The object of class UserMetadata is the only one it is necessary to modify. It contains information specific to the analysis the user want to run.<br />
+The object of class UserMetadata is the only one it is necessary to modify. It contains information specific to the analysis the user wants to run.<br />
 Most important slots are :</p>
 <ul>
 <li><em><strong>species_id</strong></em> : The NCBI Taxon Id of the species for which the calls will be generated</li>
@@ -739,8 +774,8 @@ Most important slots are :</p>
 <li><em><strong>working_path</strong></em> : path to the directory where species specific intermediate files will be generated (e.g. kallisto index, transcriptome with intergenic sequences, etc.)</li>
 <li><em><strong>output_dir</strong></em> : path to the directory where files specific to the library will be generated (e.g. calls, kallisto output, etc.)</li>
 </ul>
-<p>The slot <em>transcriptome_object</em> has to be setup with one of the methods <em><strong>setTranscriptomeFromFile()</strong></em> or <em>setTranscriptomeFromObject()</em><br />
-The slot <em>annotation_object</em> has to be setup with one of the methods <em><strong>setAnnotationFromFile()</strong></em> or <em>setAnnotationFromObject()</em></p>
+<p>The slot <em>transcriptome_object</em> has to be initialized with one of the methods <em><strong>setTranscriptomeFromFile()</strong></em> or <em>setTranscriptomeFromObject()</em><br />
+The slot <em>annotation_object</em> has to be initialized with one of the methods <em><strong>setAnnotationFromFile()</strong></em> or <em>setAnnotationFromObject()</em></p>
 </div>
 
 

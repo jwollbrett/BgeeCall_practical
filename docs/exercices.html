@@ -12,7 +12,7 @@
 
 <meta name="date" content="2020-04-24" />
 
-<title>exercices</title>
+<title>Exercices</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -399,7 +399,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">exercices</h1>
+<h1 class="title toc-ignore">Exercices</h1>
 <h4 class="author">Julien Wollbrett</h4>
 <address class="author_afil">
 Swiss Institut of Bioinformatics (SIB), Université de Lausanne<br><a class="author_email" href="mailto:#">bgee[at]sib.swiss</a>
@@ -460,16 +460,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -480,6 +480,7 @@ Ignored files:
     Ignored:    .Rproj.user/
 
 Untracked files:
+    Untracked:  .~lock.dif_expressed_genes.tsv#
     Untracked:  PCA_dim_1vs2.png
     Untracked:  PCA_prop_explained_variance.png
     Untracked:  analyis.R
@@ -525,6 +526,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/b26eac3b1e2386828e7de2d239e56792ef5cb1cd/analysis/exercices.Rmd" target="_blank">b26eac3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/64f7db81b60553d5279a354b5c77bff569f65fcd/docs/exercices.html" target="_blank">64f7db8</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -585,23 +620,24 @@ wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_descrip
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>4 RNA-Seq libraries of Drosophila melanogaster just arrived in your RStudio cloud project. All data you need are stored in the input_files directory at the root of your project. You and your virtual colleague have one hour to analyse these data and escape the Zoom room.</p>
+<p>4 RNA-Seq libraries of Drosophila melanogaster just arrived in your RStudio cloud project.<br />
+All data you need are stored in the input_files directory at the root of your project.<br />
+You and your virtual colleague have one hour to analyse these data and escape the Zoom room.</p>
 </div>
 <div id="exercice-1-one-library" class="section level2">
 <h2>Exercice 1 : One library</h2>
 <p>Generate present/absent expression calls for the RNA-Seq library SRX109273.<br />
-R commands are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/one_library.html">One library</a><br />
-Explanation of BgeeCall classes and their most important slots are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/classes_description.html">BgeeCall classes</a></p>
+Examples of R commands are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/one_library.html">One library</a><br />
+Explanations of BgeeCall classes and their most important slots are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/classes_description.html">BgeeCall classes</a></p>
 <p><strong>Important information :</strong><br />
 D. melanogaster NCBI ID : 7227<br />
 GTF gene annotations file and fasta transcriptome file are in the directory <em>input_files/ensembl</em><br />
 fastq files are in the directory <em>input_files/fastq/SRX109273/</em><br />
-use <em>/cloud/project/output_files</em> as your <em>working_path</em><br />
-use <em>/cloud/project/output_files/SRX109273</em> as your <em>output_dir</em><br />
-Even if the generation of kallisto index takes time, you can still manage to escape the Zoom room</p>
+Even if the generation of kallisto index takes time, you can still manage to escape the Zoom room on time.</p>
 <ul>
 <li>What is the TPM threshold of this library ?</li>
 <li>What is the proportion of protein coding genes present ?</li>
+<li>Have a look at the plot of abundance distribution</li>
 </ul>
 </div>
 <div id="exercice-2-list-of-libraries" class="section level2">
@@ -609,36 +645,44 @@ Even if the generation of kallisto index takes time, you can still manage to esc
 <p>Generate present/absent expression calls for the libraries SRX109272 using a file as input R commands and explanation of columns of the file are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/list_libraries.html">List of libraries</a> Explanation of BgeeCall classes and their most important slots are available in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/classes_description.html">BgeeCall classes</a></p>
 <p><strong>Important information :</strong><br />
 A template of the tsv (Tabular Separated Values) file is available at input_files/inputFile.tsv. You can edit it in RStudio with the function file.edit(“PATH_TO_FILE”) or in the terminal. This file already contains information to run BgeeCall for library SRX109273 (exercice 1). You can keep these information and run BgeeCall for 2 libraries or remove them and run BgeeCall only for library SRX109272.<br />
-fastq files of library SRX109272 are in the directory <em>/cloud/project/input_files/fastq/SRX109272/</em> Do not forget to <strong>provide the same working_path than in exercice 1</strong> in order to use previously generated kallisto index</p>
-<p>Information about the cutoff for this library are available at <em>/cloud/project/YOUR_OUTPUT_DIR/gene_cutoff_info_file.tsv</em></p>
+fastq files of library SRX109272 are in the directory <em>input_files/fastq/SRX109272/</em><br />
+Do not forget to <strong>provide the same working_path than in Exercice 1</strong> in order to use previously generated kallisto index</p>
+<p>Information about the cutoff for this library are available at <em>YOUR_OUTPUT_DIR/gene_cutoff_info_file.tsv</em></p>
 <ul>
 <li>What is the TPM threshold of this library ?</li>
 <li>What is the proportion of protein coding genes present ?</li>
+<li>Have a look at the plot of abundance distribution</li>
 </ul>
 </div>
 <div id="exercice-3-principle-component-analysis-pca" class="section level2">
 <h2>Exercice 3 : Principle component analysis (PCA)</h2>
-<p>Fortunatly your collaborator worked well and run BgeeCall on the 2 remaining libraries. She even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries. <strong>More importantly, she only kept in this file genes considered as present in the 4 libraries</strong>. Everything is ready for downstream analysis. She is now counting on you to do a PCA on these data</p>
+<p>Fortunatly your collaborator worked well and run BgeeCall on the 2 remaining libraries. She even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.<br />
+<strong>More importantly, she only kept in this file genes considered as present in the 4 libraries</strong>.<br />
+Everything is ready for downstream analysis. She is now counting on you to do a PCA on these data</p>
 <p><strong>Important information :</strong><br />
 The file generated by your collaborator is available at input_files/downstream_analysis/present_TPMs.tsv The code to run the PCA is described in the page <a href="https://jwollbrett.github.io/BgeeCall_practical/analysis.html">Processing data</a></p>
 <ul>
 <li>Check the 2 plots generated by this code and define which libraries cluster together.</li>
-<li>Annotations of these libraries are available at input_files/downstream_analysis/library_annotations.tsv. How these annotations explain the PCA?</li>
+<li>Annotations of these libraries are available at input_files/downstream_analysis/library_annotations.tsv. How do these annotations explain the PCA?</li>
 </ul>
 </div>
-<div id="exercice-4-differencial-expression" class="section level2">
-<h2>Exercice 4 : Differencial expression</h2>
-<p>Once more your collaborator was extremely productive. She merged raw counts of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries. <strong>More importantly, she only kept in this file genes considered as present in the 4 libraries</strong>. She is now counting on you to do a differential expression analysis on these data.</p>
+<div id="exercice-4-differential-expression" class="section level2">
+<h2>Exercice 4 : Differential expression</h2>
+<p>Once more your collaborator was extremely productive. She merged raw counts of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.<br />
+<strong>More importantly, she only kept in this file genes considered as present in the 4 libraries</strong>.<br />
+She is now counting on you to do a differential expression analysis on these data.</p>
 <p><strong>Important information :</strong><br />
-The file generated by your collaborator is available at input_files/downstream_analysis/present_counts.tsv The code to run the PCA is described in the page <a href="">Processing data</a></p>
+The file generated by your collaborator is available at input_files/downstream_analysis/present_counts.tsv The code to run the Differential expression is described in the page <a href="">Processing data</a></p>
 <ul>
 <li>Which are the top 10 most differentially expressed genes?</li>
 <li>How many genes are considered differentially expressed if you use a threshold of p-value=0.01 and fdr=3</li>
+<li>Run again the differential expression analysis using the file <em>input_files/downstream_analysis/present_counts.tsv</em>. This file contains all genes (even those with absence of expression). Do you see a difference in the results?</li>
 </ul>
+<p>Congratulations!!!! You managed to escape the Zoom room on time. Your collaborator is extremely proud of you.</p>
 </div>
 <div id="optional-exercice" class="section level2">
-<h2>Optional exercice</h2>
-<p>Congratulations!!!! You managed to escape the Zoom room on time. Are you sure you did not copy/paste R code without trying to understand it? If you want more do not hesitate to run again the differential expression analysis taking as input the file input_files/downstream_analysis/present_counts.tsv. This file contains all genes (present and absent)</p>
+<h2>Optional Exercice</h2>
+<p>If you are never full of data analysis you can run a geneset enrichment analysis to have more information on gene differentially expressed</p>
 </div>
 
 

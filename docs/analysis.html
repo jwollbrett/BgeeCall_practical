@@ -520,16 +520,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree590e07de3899b359f108666b1c3585ccaee5345dtargetblank590e07da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/590e07de3899b359f108666b1c3585ccaee5345d" target="_blank">590e07d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -540,6 +540,7 @@ Ignored files:
     Ignored:    .Rproj.user/
 
 Untracked files:
+    Untracked:  .~lock.dif_expressed_genes.tsv#
     Untracked:  PCA_dim_1vs2.png
     Untracked:  PCA_prop_explained_variance.png
     Untracked:  analyis.R
@@ -585,6 +586,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/b26eac3b1e2386828e7de2d239e56792ef5cb1cd/analysis/analysis.Rmd" target="_blank">b26eac3</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/64f7db81b60553d5279a354b5c77bff569f65fcd/docs/analysis.html" target="_blank">64f7db8</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -696,15 +731,14 @@ create backbone of the website
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This section present R code of downstream analysis that can be done using genes with presence of expression.</p>
+<p>Once BgeeCall generated gene experssion calls it is possible to use them to do downstream analysis. This section contains R code examples of potential analysis to run on present genes.</p>
 </div>
 <div id="pca" class="section level2">
 <h2>PCA</h2>
 <pre class="r"><code># read file with gene as rows and libraries as columns
-file &lt;- &quot;/cloud/project/input_files/downstream_analysis/present_TPMs.tsv&quot;
-present_TPMs &lt;- read.table(file = file, header = TRUE, sep = &quot;\t&quot;)
-
-# transpose data.frame to have genes as columns
+file &lt;- &quot;PATH_TO_PRESENT_TPMS_FILE&quot;
+present_TPMs &lt;- read.table(file = file, header = TRUE, sep = &quot;\t&quot;)</code></pre>
+<pre class="r"><code># transpose data.frame to have genes as columns
 data_for_PCA &lt;- t(present_TPMs)
 # calculate matrix of dissimilarities
 # k = the maximum dimension of the space which the data are to be represented in; must be in {1, 2, …, n-1}
@@ -713,68 +747,58 @@ mds &lt;- cmdscale(dist(data_for_PCA), k=3, eig=TRUE)
 proportion_eig &lt;- mds$eig * 100 / sum(mds$eig)
 
 # plot proportion of variance explained by each dimension
-png(file=&quot;PCA_prop_explained_variance.png&quot;)
 barplot(proportion_eig, las=1, ylim=c(0,100), xlab=&quot;Dimensions&quot;, ylab=&quot;Proportion of explained variance (%)&quot;,
-        y.axis=NULL, col=&quot;darkgrey&quot;, main = &quot;Proportion of variance explained by each dimension&quot;)
-dev.off()
-
-# calculate matrix of dissimilarities
-mds &lt;- cmdscale(dist(data_for_PCA))
-#PCA plot for the 2 first dimensions
-png(file=&quot;PCA_dim_1vs2.png&quot;)
-plot(mds[,1], -mds[,2], type=&quot;n&quot;, xlim=c(-1.5e+05,1.5e+05), xlab=&quot;Dimension 1&quot;, ylab=&quot;Dimension 2&quot;,
-     main=&quot;PCA plot of the 2 principal dimensions&quot;)
-text(mds[,1], -mds[,2], rownames(mds), cex=0.8)
-dev.off()</code></pre>
+        y.axis=NULL, col=&quot;darkgrey&quot;, main = &quot;Proportion of variance explained by each dimension&quot;)</code></pre>
+<p><img src="figure/analysis.Rmd/run_PCA-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#PCA plot for the 2 first dimensions
+#plotMDS(present_TPMs,xlab = &quot;Dimension 1&quot;)
+plot(mds$points[,1], -mds$points[,2], type=&quot;n&quot;, xlim=c(-2.5e+05,2.5e+05), xlab=&quot;Dimension 1&quot;, ylab=&quot;Dimension 2&quot;,
+     main=&quot;PCA plot of the 2 principal dimensions&quot;, )
+text(mds$points[,1], -mds$points[,2], rownames(mds$points), cex=0.8)</code></pre>
+<p><img src="figure/analysis.Rmd/run_PCA-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="diffrential-expression" class="section level2">
 <h2>Diffrential expression</h2>
-<pre class="r"><code># load required libraries
-library(edgeR)</code></pre>
+<pre class="r"><code>library(edgeR)</code></pre>
 <pre><code>Loading required package: limma</code></pre>
 <pre class="r"><code># read file with gene as rows and libraries counts as columns
-file_counts &lt;- &quot;../../temp/test_bgeeCall/output/7227/present_counts.tsv&quot;
+file_counts &lt;- &quot;PATH_TO_PRESENT_COUNTS_FILE&quot;
 present_counts &lt;- read.table(file = file_counts, header = TRUE, sep = &quot;\t&quot;)
-genes &lt;- rownames(present_counts)
 #read file with library annotations
-file_annotations &lt;- &quot;../../temp/test_bgeeCall/output/7227/library_annotations.tsv&quot;
-library_annotations &lt;- read.table(file = file_annotations, header = TRUE, sep = &quot;\t&quot;)
-
-# create list of grouping parameters (here sex)
+file_annotations &lt;- &quot;PATH_TO_LIBRARY_ANNOTATIONS_FILE&quot;
+library_annotations &lt;- read.table(file = file_annotations, header = TRUE, sep = &quot;\t&quot;)</code></pre>
+<pre class="r"><code># create list of grouping parameters (here sex)
 group &lt;- NULL
 for(i in seq(colnames(present_counts))){
   group[i] &lt;- as.character(library_annotations[library_annotations$Library.ID ==colnames(present_counts)[i],]$Sex)
 }
-# use group as names of the present_count data.frame
-colnames(present_counts) &lt;- group
 
-# create the design matrix for limma
-design_matrix &lt;- model.matrix(~0+group)
-colnames(design_matrix)&lt;- gsub(&quot;group&quot;,&quot;&quot;,colnames(design_matrix))
-# calculate the normalization factors between libraries
-normalization_factors &lt;- calcNormFactors(present_counts)
-# use voom to calculate normalised read counts
-voom_output &lt;- voom(present_counts,design_matrix,lib.size=colSums(present_counts)*normalization_factors)
-# extract the normalised read counts
-normalised_counts &lt;- voom_output$E
+# create DGEList object
+dge &lt;- DGEList(present_counts, group=group)
+#calculate normalization factor between libraries
+dge &lt;- calcNormFactors(dge)
+#estimate common and tag wise dispersion
+dge &lt;- estimateCommonDisp(dge)
+dge &lt;- estimateTagwiseDisp(dge)
+#perform an exact test for the difference in expression male-female
+dgeTest &lt;- exactTest(dge)
 
-# fit linear model for each gene given a series of libraries
-fit &lt;- lmFit(voom_output, design_matrix)
-# construct the contrast matrix corresponding to specified contrasts of a set of parameters
-cont.matrix &lt;- makeContrasts(male-female,levels=design_matrix)
-# compute estimated coefficients and standard errors for a given set of contrasts
-fit &lt;- contrasts.fit(fit, cont.matrix)
+# retrieve all gene differentially expressed with a p-value lower than 0.01
+topTags &lt;- topTags(dgeTest, n=nrow(dgeTest$table), p.value = 0.05)
+#filter for FDR &lt; 0.05
+results &lt;- topTags$table[topTags$table$FDR&lt;0.05,]
+write.table(x = results, file = &quot;dif_expressed_genes.tsv&quot;, row.names = TRUE, quote = FALSE, sep=&quot;\t&quot;)
+up_regulated_genes_female &lt;- results[results$logFC &lt; -1,]
+up_regulated_genes_male &lt;- results[results$logFC &gt; 1,]
 
-# compute moderated t-statistics of differential expression by empirical Bayes moderation of the standard errors
-fit &lt;- eBayes(fit)
-options(digits=3)
-
-# use the topTable function to order genes and filter by p-value and log fold change
-results &lt;- topTable(fit, coef=&quot;male - female&quot;, number = nrow(present_counts), p.value = 0.05, lfc = 2)
-
-#write differentialy expressed genes in a file
-#write.table(x = results, file = &quot;/cloud/project/output_files/dif_expressed_genes.tsv&quot;, row.names = TRUE, quote = FALSE, sep=&quot;\t&quot;)
-write.table(x = results, file = &quot;dif_expressed_genes.tsv&quot;, row.names = TRUE, quote = FALSE, sep=&quot;\t&quot;)</code></pre>
+# generate an MA plot with 1% differentially expressed genes
+plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR&lt;0.01)],)</code></pre>
+<p><img src="figure/analysis.Rmd/run_dif_expression-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># generate a volcano plot
+volcanoData &lt;- cbind(topTags$table$logFC, -log10(topTags$table$PValue))
+colnames(volcanoData) &lt;- c(&quot;logFC&quot;, &quot;negLogPval&quot;)
+plot(volcanoData, pch=19)</code></pre>
+<p><img src="figure/analysis.Rmd/run_dif_expression-2.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
