@@ -429,7 +429,7 @@ Swiss Institut of Bioinformatics (SIB), Université de Lausanne<br><a class="aut
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-04-24
+<strong>Last updated:</strong> 2020-04-25
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -520,16 +520,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1e84e4ab196a90842a5397834acbbc28ee46f9fctargetblank1e84e4aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1e84e4ab196a90842a5397834acbbc28ee46f9fc" target="_blank">1e84e4a</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeb26eac3b1e2386828e7de2d239e56792ef5cb1cdtargetblankb26eac3a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1e84e4ab196a90842a5397834acbbc28ee46f9fctargetblank1e84e4aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/b26eac3b1e2386828e7de2d239e56792ef5cb1cd" target="_blank">b26eac3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1e84e4ab196a90842a5397834acbbc28ee46f9fc" target="_blank">1e84e4a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -591,7 +591,24 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/jwollbrett/BgeeCall_course/blob/b26eac3b1e2386828e7de2d239e56792ef5cb1cd/analysis/one_library.Rmd" target="_blank">b26eac3</a>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/1e84e4ab196a90842a5397834acbbc28ee46f9fc/analysis/one_library.Rmd" target="_blank">1e84e4a</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+<td>
+wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/625ed0560b2bf7ff0dc6a7ceb07789745afaf0b1/analysis/one_library.Rmd" target="_blank">625ed05</a>
 </td>
 <td>
 Julien
@@ -601,6 +618,23 @@ Julien
 </td>
 <td>
 wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/3f5d76c0fb4d5d951c6b152116cf8c2c60707260/docs/one_library.html" target="_blank">3f5d76c</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+<td>
+Build site.
 </td>
 </tr>
 <tr>
@@ -920,14 +954,14 @@ create backbone of the website
 <h2>Introduction</h2>
 <p>This page describe how to generate present/absent calls for one RNA-Seq library.</p>
 </div>
-<div id="bgeemetadata-and-kallistometadata-classes" class="section level2">
-<h2>BgeeMetadata and KallistoMetadata classes</h2>
+<div id="bgeemetadata-and-kallistometadata-objects" class="section level2">
+<h2>BgeeMetadata and KallistoMetadata objects</h2>
 <p>These 2 classes are useful to tune how BgeeCall works. No need to create an object of the class BgeeMetada as only default values will be used during this practical (last official Bgee intergenic release).<br />
 An object of the KallistoMetadata class has to be created to specify to download kallisto (as it is not installed on RStudio cloud).</p>
 <pre class="r"><code>kallisto &lt;- new(&quot;KallistoMetadata&quot;, download_kallisto = TRUE)</code></pre>
 </div>
-<div id="usermetadata-class" class="section level2">
-<h2>UserMetadata class</h2>
+<div id="usermetadata-object" class="section level2">
+<h2>UserMetadata object</h2>
 <p>An object of this class has to be created and value of some slots have to be modified to run BgeeCall</p>
 <pre class="r"><code>user &lt;- new(&quot;UserMetadata&quot;, species_id = &quot;NCBI_TAXON_ID&quot;, reads_size=READS_SIZE)
 user &lt;- setRNASeqLibPath(user, &quot;PATH_TO_RNASEQ_LIBRARY_DIR&quot;)
@@ -942,19 +976,19 @@ user &lt;- setWorkingPath(user, &quot;PATH_TO_WORKING_DIR&quot;)</code></pre>
 <pre class="r"><code>output_files_info &lt;- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)
 output_files_info</code></pre>
 <pre><code>$calls_tsv_path
-[1] &quot;path/to/gene_level_abundance+calls.tsv&quot;
+[1] &quot;PATH_TO_OUTPUT_DIR/gene_level_abundance+calls.tsv&quot;
 
 $cutoff_info_file_path
-[1] &quot;path/to/gene_cutoff_info_file.tsv&quot;
+[1] &quot;PATH_TO_OUTPUT_DIR/gene_cutoff_info_file.tsv&quot;
 
 $abundance_tsv
-[1] &quot;abundance.tsv&quot;
+[1] &quot;PATH_TO_OUTPUT_DIR/abundance.tsv&quot;
 
 $TPM_distribution_path
-[1] &quot;path/to/gene_TPM_genic_intergenic+cutoff.pdf&quot;
+[1] &quot;PATH_TO_OUTPUT_DIR/gene_TPM_genic_intergenic+cutoff.pdf&quot;
 
 $S4_slots_summary
-[1] &quot;path/to/S4_slots_summary.tsv&quot;</code></pre>
+[1] &quot;PATH_TO_OUTPUT_DIR/S4_slots_summary.tsv&quot;</code></pre>
 <p>This command generates a list with a link to 5 generated files.</p>
 <ul>
 <li><em>calls_tsv_path</em> : path to the file with abundance at gene level and present/absent expression calls</li>
