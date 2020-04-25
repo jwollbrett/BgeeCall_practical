@@ -19,7 +19,7 @@ library(BgeeCall)
 
 This page describe how to generate present/absent calls for a list of RNA-Seq library.
 
-## BgeeMetadata and KallistoMetadata classes
+## BgeeMetadata and KallistoMetadata objects
 
 These 2 classes are useful to tune how BgeeCall works.  
 No need to create an object of the class BgeeMetada as only default values will be used (last official Bgee intergenic release).  

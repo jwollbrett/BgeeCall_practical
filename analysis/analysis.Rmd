@@ -28,7 +28,7 @@ present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
 file <- "../../temp/BgeeCall_project/input_files/downstream_analysis/present_TPMs.tsv"
 present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
 ```
-```{r run_PCA}
+```{r run_PCA, eval=FALSE}
 # transpose data.frame to have genes as columns
 data_for_PCA <- t(present_TPMs)
 # calculate matrix of dissimilarities
@@ -67,7 +67,7 @@ present_counts <- read.table(file = file_counts, header = TRUE, sep = "\t")
 file_annotations <- "/home/julien/Documents/temp/BgeeCall_project/input_files/downstream_analysis/library_annotations.tsv"
 library_annotations <- read.table(file = file_annotations, header = TRUE, sep = "\t")
 ```
-```{r run_dif_expression}
+```{r run_dif_expression, eval=FALSE}
 # create list of grouping parameters (here sex)
 group <- NULL
 for(i in seq(colnames(present_counts))){
@@ -84,13 +84,11 @@ dge <- estimateTagwiseDisp(dge)
 #perform an exact test for the difference in expression male-female
 dgeTest <- exactTest(dge)
 
-# retrieve all gene differentially expressed with a p-value lower than 0.01
+# retrieve all gene differentially expressed with a p-value lower than 0.05
 topTags <- topTags(dgeTest, n=nrow(dgeTest$table), p.value = 0.05)
 #filter for FDR < 0.05
 results <- topTags$table[topTags$table$FDR<0.05,]
 write.table(x = results, file = "dif_expressed_genes.tsv", row.names = TRUE, quote = FALSE, sep="\t")
-up_regulated_genes_female <- results[results$logFC < -1,]
-up_regulated_genes_male <- results[results$logFC > 1,]
 
 # generate an MA plot with 1% differentially expressed genes
 plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR<0.01)],)
@@ -99,4 +97,25 @@ plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR<0.0
 volcanoData <- cbind(topTags$table$logFC, -log10(topTags$table$PValue))
 colnames(volcanoData) <- c("logFC", "negLogPval")
 plot(volcanoData, pch=19)
+```
+
+
+## GO analysis
+
+```{r go analysis, eval=FALSE}
+library(biomaRt)
+## topGO function of edgeR require entrez IDs. We will use biomaRt to map ensembl Ids to entrez Ids
+#query biomaRt
+mart <- useDataset("dmelanogaster_gene_ensembl", useMart("ensembl"))
+entrez_mapping <- getBM(attributes=c("ensembl_gene_id", "entrezgene_id"), mart=mart, useCache = FALSE)
+#update row names of the DGEExact object from edgeR
+table <- merge(dgeTest$table, entrez_mapping, by.x="row.names", by.y="ensembl_gene_id", all.x = TRUE)
+#looks like mapping from biomaRt has some problems of redundancy. Need hack to remove redundancy (not good practice)
+table <- na.omit(table[!duplicated(table[,c('entrezgene_id')]),])
+rownames(table) <- table$entrezgene_id
+dgeTest$table <- table[,c('logFC','logCPM','PValue')]
+
+#run the GO analysis
+go <- goana(dgeTest, species = "Dm")
+topGO(go)
 ```

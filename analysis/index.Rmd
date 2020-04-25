@@ -12,32 +12,33 @@ output:
 ---
 
 - [Software & Data](general.html):
-    - Software requirements
+    - Software installation
     - Data
 
 - [BgeeCall Classes](classes_description.html):
     - KallistoMetadata
     - BgeeMetadata
-    - UsetMetadata
+    - UserMetadata
 
 - [Intergenic releases](intergenic_releases.html):
+    - List all releases available
     - Bgee releases
-    - Community
-    - Custom
+    - Community release
+    - Custom release
 
 - [Calls for one library](one_library.html):
-    - KallistoMetadata object
-    - BgeeMetadata object
+    - KallistoMetadata and BgeeMetadata objects
     - UserMetadata object
-    - Run the workflow
+    - Generate present/absent calls
    
 - [Calls for a list of libraries](list_libraries.html):
-    - KallistoMetadata object
-    - BgeeMetadata object
-    - userMetadataInfo file
-    - Run the workflow
+    - KallistoMetadata and BgeeMetadata objects
+    - File describing UserMetadata objects
+    - Generate present/absent calls
     
 - [Processing data](analysis.html):
-    - Load data
     - PCA
     - Differential expression
+    - GO analysis
+    
+- [Exercices](exercices.html)

@@ -19,7 +19,7 @@ library(BgeeCall)
 
 This page describe how to generate present/absent calls for one RNA-Seq library.
 
-## BgeeMetadata and KallistoMetadata classes
+## BgeeMetadata and KallistoMetadata objects
 
 These 2 classes are useful to tune how BgeeCall works. 
 No need to create an object of the class BgeeMetada as only default values will be used during this practical (last official Bgee intergenic release).  
@@ -29,7 +29,7 @@ An object of the KallistoMetadata class has to be created to specify to download
 kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
 ```
 
-## UserMetadata class
+## UserMetadata object
 
 An object of this class has to be created and value of some slots have to be modified to run BgeeCall
 
@@ -54,11 +54,11 @@ output_files_info
 ```
 ```{r fake_output, echo=FALSE}
 output_files_info <- NULL
-output_files_info$calls_tsv_path <- "path/to/gene_level_abundance+calls.tsv"
-output_files_info$cutoff_info_file_path <- "path/to/gene_cutoff_info_file.tsv"
-output_files_info$abundance_tsv <- "abundance.tsv"
-output_files_info$TPM_distribution_path <- "path/to/gene_TPM_genic_intergenic+cutoff.pdf"
-output_files_info$S4_slots_summary <- "path/to/S4_slots_summary.tsv"
+output_files_info$calls_tsv_path <- "PATH_TO_OUTPUT_DIR/gene_level_abundance+calls.tsv"
+output_files_info$cutoff_info_file_path <- "PATH_TO_OUTPUT_DIR/gene_cutoff_info_file.tsv"
+output_files_info$abundance_tsv <- "PATH_TO_OUTPUT_DIR/abundance.tsv"
+output_files_info$TPM_distribution_path <- "PATH_TO_OUTPUT_DIR/gene_TPM_genic_intergenic+cutoff.pdf"
+output_files_info$S4_slots_summary <- "PATH_TO_OUTPUT_DIR/S4_slots_summary.tsv"
 output_files_info
 ```
 
