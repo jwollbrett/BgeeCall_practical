@@ -21,11 +21,13 @@ You and your virtual colleague have one hour to analyse these data and escape th
 ## Exercice 1 : One library
 
 Generate present/absent expression calls for the RNA-Seq library SRX109273.  
+Explanations of BgeeCall classes and their most important slots are available in the page [BgeeCall classes](https://jwollbrett.github.io/BgeeCall_practical/classes_description.html)  
 Examples of R commands are available in the page [One library](https://jwollbrett.github.io/BgeeCall_practical/one_library.html)  
-Explanations of BgeeCall classes and their most important slots are available in the page [BgeeCall classes](https://jwollbrett.github.io/BgeeCall_practical/classes_description.html)
+
 
 **Important information :**  
 D. melanogaster NCBI ID : 7227   
+read length for this library is 76bp  
 GTF gene annotations file and fasta transcriptome file are in the directory _input_files/ensembl_   
 fastq files are in the directory _input_files/fastq/SRX109273/_   
 Even if the generation of kallisto index takes time, you can still manage to escape the Zoom room on time.   
@@ -42,6 +44,7 @@ R commands and explanation of columns of the file are available in the page [Lis
 Explanation of BgeeCall classes and their most important slots are available in the page [BgeeCall classes](https://jwollbrett.github.io/BgeeCall_practical/classes_description.html)
 
 **Important information :**  
+**As RStudio cloud project does not have enough disk space to upload 2 RNA-Seq libraries please run again this Exercice with library SRX109273**  
 A template of the tsv (Tabular Separated Values) file is available at _input_files/inputFile.tsv_.  
 This file already contains information to run BgeeCall for library SRX109273 (Exercice 1). You can keep these information and run BgeeCall for 2 libraries or remove them and run BgeeCall only for library SRX109272.   
 fastq files of library SRX109272 are in the directory _input_files/fastq/SRX109272/_  
@@ -85,7 +88,7 @@ The code to run the Differential expression is described in the page [Processing
 
 
 
-Congratulations!!!! 
+Congratulations!!!!  
 You managed to escape the Zoom room on time. Your virtual colleague is virtually extremely proud of you.  
 
 
