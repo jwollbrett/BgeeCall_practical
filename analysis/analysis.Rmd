@@ -28,7 +28,7 @@ present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
 file <- "../../temp/BgeeCall_project/input_files/downstream_analysis/present_TPMs.tsv"
 present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
 ```
-```{r run_PCA, eval=FALSE}
+```{r run_PCA}
 # transpose data.frame to have genes as columns
 data_for_PCA <- t(present_TPMs)
 # calculate matrix of dissimilarities
@@ -67,7 +67,7 @@ present_counts <- read.table(file = file_counts, header = TRUE, sep = "\t")
 file_annotations <- "/home/julien/Documents/temp/BgeeCall_project/input_files/downstream_analysis/library_annotations.tsv"
 library_annotations <- read.table(file = file_annotations, header = TRUE, sep = "\t")
 ```
-```{r run_dif_expression, eval=FALSE}
+```{r run_dif_expression}
 # create list of grouping parameters (here sex)
 group <- NULL
 for(i in seq(colnames(present_counts))){
@@ -102,7 +102,7 @@ plot(volcanoData, pch=19)
 
 ## GO analysis
 
-```{r go analysis, eval=FALSE}
+```{r go analysis}
 library(biomaRt)
 ## topGO function of edgeR require entrez IDs. We will use biomaRt to map ensembl Ids to entrez Ids
 #query biomaRt
