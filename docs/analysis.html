@@ -429,7 +429,7 @@ Swiss Institut of Bioinformatics (SIB), Université de Lausanne<br><a class="aut
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2020-04-25
+<strong>Last updated:</strong> 2020-04-27
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -520,16 +520,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1e84e4ab196a90842a5397834acbbc28ee46f9fctargetblank1e84e4aa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1e84e4ab196a90842a5397834acbbc28ee46f9fc" target="_blank">1e84e4a</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef9a3dfae2f5a823a22c36b4655d7bd75eb8fe390targetblankf9a3dfaa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f9a3dfae2f5a823a22c36b4655d7bd75eb8fe390" target="_blank">f9a3dfa</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree1e84e4ab196a90842a5397834acbbc28ee46f9fctargetblank1e84e4aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreef9a3dfae2f5a823a22c36b4655d7bd75eb8fe390targetblankf9a3dfaa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/1e84e4ab196a90842a5397834acbbc28ee46f9fc" target="_blank">1e84e4a</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/f9a3dfae2f5a823a22c36b4655d7bd75eb8fe390" target="_blank">f9a3dfa</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -540,7 +540,6 @@ Ignored files:
     Ignored:    .Rproj.user/
 
 Untracked files:
-    Untracked:  .~lock.dif_expressed_genes.tsv#
     Untracked:  PCA_dim_1vs2.png
     Untracked:  PCA_prop_explained_variance.png
     Untracked:  analyis.R
@@ -586,6 +585,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f9a3dfae2f5a823a22c36b4655d7bd75eb8fe390/analysis/analysis.Rmd" target="_blank">f9a3dfa</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-27
+</td>
+<td>
+wflow_publish(“analysis/analysis.Rmd”)
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/f01becc30154f0ae50306fa32f4adea132122d54/docs/analysis.html" target="_blank">f01becc</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -782,13 +815,110 @@ proportion_eig &lt;- mds$eig * 100 / sum(mds$eig)
 
 # plot proportion of variance explained by each dimension
 barplot(proportion_eig, las=1, ylim=c(0,100), xlab=&quot;Dimensions&quot;, ylab=&quot;Proportion of explained variance (%)&quot;,
-        y.axis=NULL, col=&quot;darkgrey&quot;, main = &quot;Proportion of variance explained by each dimension&quot;)
-
-#PCA plot for the 2 first dimensions
+        y.axis=NULL, col=&quot;darkgrey&quot;, main = &quot;Proportion of variance explained by each dimension&quot;)</code></pre>
+<p><img src="figure/analysis.Rmd/run_PCA-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-run_PCA-1">
+Past versions of run_PCA-1.png
+</button>
+</p>
+<div id="fig-run_PCA-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f01becc30154f0ae50306fa32f4adea132122d54/docs/figure/analysis.Rmd/run_PCA-1.png" target="_blank">f01becc</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/3f5d76c0fb4d5d951c6b152116cf8c2c60707260/docs/figure/analysis.Rmd/run_PCA-1.png" target="_blank">3f5d76c</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>#PCA plot for the 2 first dimensions
 #plotMDS(present_TPMs,xlab = &quot;Dimension 1&quot;)
 plot(mds$points[,1], -mds$points[,2], type=&quot;n&quot;, xlim=c(-2.5e+05,2.5e+05), xlab=&quot;Dimension 1&quot;, ylab=&quot;Dimension 2&quot;,
      main=&quot;PCA plot of the 2 principal dimensions&quot;, )
 text(mds$points[,1], -mds$points[,2], rownames(mds$points), cex=0.8)</code></pre>
+<p><img src="figure/analysis.Rmd/run_PCA-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-run_PCA-2">
+Past versions of run_PCA-2.png
+</button>
+</p>
+<div id="fig-run_PCA-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f01becc30154f0ae50306fa32f4adea132122d54/docs/figure/analysis.Rmd/run_PCA-2.png" target="_blank">f01becc</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/3f5d76c0fb4d5d951c6b152116cf8c2c60707260/docs/figure/analysis.Rmd/run_PCA-2.png" target="_blank">3f5d76c</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="diffrential-expression" class="section level2">
 <h2>Diffrential expression</h2>
@@ -823,12 +953,109 @@ results &lt;- topTags$table[topTags$table$FDR&lt;0.05,]
 write.table(x = results, file = &quot;dif_expressed_genes.tsv&quot;, row.names = TRUE, quote = FALSE, sep=&quot;\t&quot;)
 
 # generate an MA plot with 1% differentially expressed genes
-plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR&lt;0.01)],)
-
-# generate a volcano plot
+plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR&lt;0.01)],)</code></pre>
+<p><img src="figure/analysis.Rmd/run_dif_expression-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-run_dif_expression-1">
+Past versions of run_dif_expression-1.png
+</button>
+</p>
+<div id="fig-run_dif_expression-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f01becc30154f0ae50306fa32f4adea132122d54/docs/figure/analysis.Rmd/run_dif_expression-1.png" target="_blank">f01becc</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/3f5d76c0fb4d5d951c6b152116cf8c2c60707260/docs/figure/analysis.Rmd/run_dif_expression-1.png" target="_blank">3f5d76c</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code># generate a volcano plot
 volcanoData &lt;- cbind(topTags$table$logFC, -log10(topTags$table$PValue))
 colnames(volcanoData) &lt;- c(&quot;logFC&quot;, &quot;negLogPval&quot;)
 plot(volcanoData, pch=19)</code></pre>
+<p><img src="figure/analysis.Rmd/run_dif_expression-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-run_dif_expression-2">
+Past versions of run_dif_expression-2.png
+</button>
+</p>
+<div id="fig-run_dif_expression-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/f01becc30154f0ae50306fa32f4adea132122d54/docs/figure/analysis.Rmd/run_dif_expression-2.png" target="_blank">f01becc</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-25
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/3f5d76c0fb4d5d951c6b152116cf8c2c60707260/docs/figure/analysis.Rmd/run_dif_expression-2.png" target="_blank">3f5d76c</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-24
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="go-analysis" class="section level2">
 <h2>GO analysis</h2>
@@ -847,6 +1074,48 @@ dgeTest$table &lt;- table[,c(&#39;logFC&#39;,&#39;logCPM&#39;,&#39;PValue&#39;)]
 #run the GO analysis
 go &lt;- goana(dgeTest, species = &quot;Dm&quot;)
 topGO(go)</code></pre>
+<pre><code>                                           Term Ont   N Up Down      P.Up
+GO:0022626                   cytosolic ribosome  CC  91  0   86 1.0000000
+GO:0002181              cytoplasmic translation  BP 117  0   94 1.0000000
+GO:0042254                  ribosome biogenesis  BP 191  3  123 1.0000000
+GO:0022613 ribonucleoprotein complex biogenesis  BP 268  6  138 1.0000000
+GO:0044445                       cytosolic part  CC 143  6   93 0.9999738
+GO:0022625    cytosolic large ribosomal subunit  CC  52  0   51 1.0000000
+GO:0006364                      rRNA processing  BP 124  3   80 0.9999985
+GO:0005840                             ribosome  CC 174  4   96 1.0000000
+GO:0016072               rRNA metabolic process  BP 142  4   85 0.9999990
+GO:0044391                    ribosomal subunit  CC 165  3   92 1.0000000
+GO:0006412                          translation  BP 367  9  151 1.0000000
+GO:0043604           amide biosynthetic process  BP 425 16  166 1.0000000
+GO:0043043         peptide biosynthetic process  BP 401 12  159 1.0000000
+GO:1990904            ribonucleoprotein complex  CC 556 26  197 1.0000000
+GO:0005730                            nucleolus  CC 185  6   95 0.9999999
+GO:0043603     cellular amide metabolic process  BP 526 30  186 1.0000000
+GO:0003735   structural constituent of ribosome  MF 158  4   86 0.9999999
+GO:0006518            peptide metabolic process  BP 464 23  168 1.0000000
+GO:0042273   ribosomal large subunit biogenesis  BP  51  0   43 1.0000000
+GO:0022627    cytosolic small ribosomal subunit  CC  38  0   36 1.0000000
+                 P.Down
+GO:0022626 1.966044e-62
+GO:0002181 9.423063e-54
+GO:0042254 4.884838e-52
+GO:0022613 3.330418e-42
+GO:0044445 5.653007e-40
+GO:0022625 9.007390e-40
+GO:0006364 4.019224e-34
+GO:0005840 1.061884e-32
+GO:0016072 1.223935e-32
+GO:0044391 7.403915e-32
+GO:0006412 1.165862e-31
+GO:0043604 1.531185e-31
+GO:0043043 4.264480e-31
+GO:1990904 1.069313e-30
+GO:0005730 4.486529e-29
+GO:0043603 7.974862e-29
+GO:0003735 8.356819e-29
+GO:0006518 2.293887e-27
+GO:0042273 9.169436e-27
+GO:0022627 1.126329e-26</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -875,16 +1144,30 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] edgeR_3.28.1    limma_3.42.2    workflowr_1.6.1
+[1] biomaRt_2.42.0  edgeR_3.28.1    limma_3.42.2    workflowr_1.6.1
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.3      knitr_1.28      whisker_0.4     magrittr_1.5   
- [5] lattice_0.20-41 R6_2.4.1        rlang_0.4.5     stringr_1.4.0  
- [9] tools_3.6.3     grid_3.6.3      xfun_0.12       git2r_0.26.1   
-[13] htmltools_0.4.0 yaml_2.2.1      digest_0.6.25   rprojroot_1.3-2
-[17] later_1.0.0     promises_1.1.0  fs_1.3.2        glue_1.3.1     
-[21] evaluate_0.14   rmarkdown_2.1   stringi_1.4.6   compiler_3.6.3 
-[25] backports_1.1.5 locfit_1.5-9.4  httpuv_1.5.2   </code></pre>
+ [1] progress_1.2.2       locfit_1.5-9.4       tidyselect_1.0.0    
+ [4] xfun_0.12            purrr_0.3.3          lattice_0.20-41     
+ [7] vctrs_0.2.3          htmltools_0.4.0      stats4_3.6.3        
+[10] BiocFileCache_1.10.2 yaml_2.2.1           blob_1.2.1          
+[13] XML_3.99-0.3         rlang_0.4.5          later_1.0.0         
+[16] pillar_1.4.3         glue_1.3.1           DBI_1.1.0           
+[19] rappdirs_0.3.1       BiocGenerics_0.32.0  bit64_0.9-7         
+[22] dbplyr_1.4.2         stringr_1.4.0        memoise_1.1.0       
+[25] evaluate_0.14        Biobase_2.46.0       knitr_1.28          
+[28] IRanges_2.20.2       httpuv_1.5.2         curl_4.3            
+[31] parallel_3.6.3       AnnotationDbi_1.48.0 Rcpp_1.0.3          
+[34] openssl_1.4.1        promises_1.1.0       backports_1.1.5     
+[37] S4Vectors_0.24.3     fs_1.3.2             bit_1.1-15.2        
+[40] hms_0.5.3            askpass_1.1          digest_0.6.25       
+[43] stringi_1.4.6        dplyr_0.8.4          grid_3.6.3          
+[46] rprojroot_1.3-2      tools_3.6.3          magrittr_1.5        
+[49] RSQLite_2.2.0        tibble_2.1.3         GO.db_3.10.0        
+[52] crayon_1.3.4         whisker_0.4          pkgconfig_2.0.3     
+[55] prettyunits_1.1.1    org.Dm.eg.db_3.10.0  assertthat_0.2.1    
+[58] rmarkdown_2.1        httr_1.4.1           R6_2.4.1            
+[61] git2r_0.26.1         compiler_3.6.3      </code></pre>
 </div>
 </div>
 
