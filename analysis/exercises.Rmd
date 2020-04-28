@@ -13,7 +13,7 @@ editor_options:
 
 ## Introduction
 
-4 RNA-Seq libraries of Drosophila melanogaster just arrived in your RStudio cloud project.  
+4 RNA-Seq libraries (SRX109271, SRX109272, SRX109273, SRX109274) of Drosophila melanogaster just arrived in your RStudio cloud project.  
 All data you need are stored in the _input_files_ directory at the root of your project.  
 You and your virtual colleague have one hour to analyse these data and escape the Zoom room.  
 
@@ -59,7 +59,7 @@ Information about the cutoff for this library are available at _YOUR_OUTPUT_DIR/
 
 ## Exercise 3 : Principle component analysis (PCA)
 
-Fortunatly your colleague worked well and run BgeeCall on the 2 remaining libraries. She even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.  
+Fortunatly your colleague worked well and run BgeeCall on the 2 remaining libraries. The output of BgeeCall for the 4 libraries are available at _output_files/libraries/_. Your colleague even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.  
 **More importantly, she only kept in this file genes considered as present in the 4 libraries**.  
 Everything is ready for downstream analysis.
 She is now counting on you to do a PCA on these data
