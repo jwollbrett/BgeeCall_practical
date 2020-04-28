@@ -34,7 +34,7 @@ Even if the generation of kallisto index takes time, you can still manage to esc
 
 * What is the TPM threshold of this library ?
 * What is the proportion of protein coding genes present ?
-* Have a look at the plot of distribution of abundance
+* Have a look at the density plot of abundance
 
 
 ## Exercice 2 : List of libraries
@@ -44,7 +44,6 @@ R commands and explanation of columns of the file are available in the page [Lis
 Explanation of BgeeCall classes and their most important slots are available in the page [BgeeCall classes](https://jwollbrett.github.io/BgeeCall_practical/classes_description.html)
 
 **Important information :**  
-**As RStudio cloud project does not have enough disk space to upload 2 RNA-Seq libraries please run again this Exercice with library SRX109273**  
 A template of the tsv (Tabular Separated Values) file is available at _input_files/inputFile.tsv_.  
 This file already contains information to run BgeeCall for library SRX109273 (Exercice 1). You can keep these information and run BgeeCall for 2 libraries or remove them and run BgeeCall only for library SRX109272.   
 fastq files of library SRX109272 are in the directory _input_files/fastq/SRX109272/_  
@@ -55,6 +54,7 @@ Information about the cutoff for this library are available at _YOUR_OUTPUT_DIR/
 * What is the TPM threshold of this library ?
 * What is the proportion of protein coding genes present ?
 * Have a look at the plot of abundance distribution  
+* Have a look at the calls
 
 
 ## Exercice 3 : Principle component analysis (PCA)
@@ -84,7 +84,7 @@ The code to run the Differential expression is described in the page [Processing
 
 * Which are the top 10 most differentially expressed genes?
 * How many genes are considered differentially expressed if you use a threshold of p-value=0.01 and aboslute value of logFC=2
-* Run again the differential expression analysis using the file _input_files/downstream_analysis/present_counts.tsv_. This file contains all genes (even those with absence of expression). What is the impact of removing genes with absence of expression?
+* Run again the differential expression analysis using the file _input_files/downstream_analysis/present_counts.tsv_. This file contains all genes (even those with absence of expression). What is the impact of removing genes with absence of expression? **(The aim of this question is to see impact of not removing genes with absence of expression. DE analysis should be done on expressed genes only)**
 
 
 

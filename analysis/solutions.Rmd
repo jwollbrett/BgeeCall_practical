@@ -1,0 +1,201 @@
+---
+title: "Solutions to Exercices"
+author: 
+- name: Julien Wollbrett
+  email: bgee[at]sib.swiss
+  affiliation:
+    &SIB Swiss Institut of Bioinformatics (SIB), Université de Lausanne 
+date: "2020-04-22"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Exercice 1:
+
+R commands to run are :
+
+```{r one_library}
+library(BgeeCall)
+# initialize kallisto object
+kallisto <- new("KallistoMetadata", download_kallisto = TRUE)
+#initialize userr object
+user <- new("UserMetadata", species_id = "7227", reads_size=76)
+user <- setRNASeqLibPath(user, "input_files/fastq/SRX109273")
+user <- setTranscriptomeFromFile(user, "input_files/ensembl/Drosophila_melanogaster.BDGP6.cdna.all.fa.gz")
+user <- setAnnotationFromFile(user, "input_files/ensembl/Drosophila_melanogaster.BDGP6.84.gtf.gz")
+user <- setOutputDir(user, "output_files/SRX109273")
+user <- setWorkingPath(user, "output_files/")
+#run generation of presetn/absent calls
+output_files_info <- generate_calls_workflow(abundanceMetadata = kallisto, userMetadata = user)
+```
+
+Answer to questions :  
+
+* TPM threshold : 0.716792 (information available in file _output_files/SRX109273/gene_cutoff_info_file.tsv_)  
+* Proportion of protein coding present : 69.13 (information available in file _output_files/SRX109273/gene_cutoff_info_file.tsv_)  
+* density plot : _output_files/SRX109273/gene_TPM_genic_intergenic+cutoff.pdf_  
+Calls of presence/absence are in the file : _output_files/SRX109273/gene_level_abundance+calls.tsv_  
+
+
+## Exercice 2
+
+
+You have to modify the file inputFile.tsv in order to generate calls on 2 libraries. After modification the file should looks like that :
+
+```{r inputFile}
+input_file <- "input_files/inputFile.tsv"
+input_file
+```
+  
+R commands to generate the calls using a file as input :
+
+```{r list_calls}
+generate_calls_workflow(abundanceMetadata = kallisto, userFile = "input_files/inputFile.tsv")
+```
+
+Answer to questions :  
+
+* TPM threshold : 0.379585 (information available in file _output_files/SRX109272/gene_cutoff_info_file.tsv_)  
+* Proportion of protein coding present : 67.39 (information available in file _output_files/SRX109272/gene_cutoff_info_file.tsv_)  
+* density plot : _output_files/SRX109272/gene_TPM_genic_intergenic+cutoff.pdf_  
+* calls are in the file _output_files/SRX109272/gene_level_abundance+calls.tsv_  
+
+```{r calls_SRX109212}
+calls_SRX109272 <- read.table("output_files/SRX109272/gene_level_abundance+calls.tsv", header = TRUE, sep = "\t")
+head(calls_SRX109272)
+```
+
+
+## Exercice 3
+
+
+R commands to generate the PCA plots :
+
+```{r pca}
+# read file with gene as rows and libraries as columns
+file <- "input_files/downstream_analysis/present_TPMs.tsv"
+present_TPMs <- read.table(file = file, header = TRUE, sep = "\t")
+# transpose data.frame to have genes as columns
+data_for_PCA <- t(present_TPMs)
+# calculate matrix of dissimilarities
+# k = the maximum dimension of the space which the data are to be represented in; must be in {1, 2, …, n-1}
+# eig = indicates whether eigenvalues should be returned
+mds <- cmdscale(dist(data_for_PCA), k=3, eig=TRUE)
+proportion_eig <- mds$eig * 100 / sum(mds$eig)
+# plot proportion of variance explained by each dimension
+barplot(proportion_eig, las=1, ylim=c(0,100), xlab="Dimensions", ylab="Proportion of explained variance (%)",
+        y.axis=NULL, col="darkgrey", main = "Proportion of variance explained by each dimension")
+#PCA plot for the 2 first dimensions
+#plotMDS(present_TPMs,xlab = "Dimension 1")
+plot(mds$points[,1], -mds$points[,2], type="n", xlim=c(-2.5e+05,2.5e+05), xlab="Dimension 1", ylab="Dimension 2",
+     main="PCA plot of the 2 principal dimensions", )
+text(mds$points[,1], -mds$points[,2], rownames(mds$points), cex=0.8)
+```
+
+
+Answer to questions :  
+* Libraries SRX109273 and SRX109274 cluster together. Libraries SRX109271 and SRX109272 cluster together
+* Looking at library annotations we can see that all libraries correspond to same anatomical entity, developmental stage and strain. The only difference is the sex. In the plot we see that one dimension explains all variance between libraries. It means one biological parameter explains all the variance. This parameter is the sex as female samples cluster together and male samples cluster together. In the next exercice we will calculate differential expression of male samples versus female samples.
+
+
+## Exercice 4 :  
+
+
+R commands to generate the differential expression (DE) :
+
+
+```{r diff_expr}
+library(edgeR)
+# read file with gene as rows and libraries counts as columns
+file_counts <- "input_files/downstream_analysis/present_counts.tsv"
+present_counts <- read.table(file = file_counts, header = TRUE, sep = "\t")
+#read file with library annotations
+file_annotations <- "input_files/downstream_analysis/library_annotations.tsv"
+library_annotations <- read.table(file = file_annotations, header = TRUE, sep = "\t")
+# create list of grouping parameters (here sex)
+group <- NULL
+for(i in seq(colnames(present_counts))){
+  group[i] <- as.character(library_annotations[library_annotations$Library.ID ==colnames(present_counts)[i],]$Sex)
+}
+
+# create DGEList object
+dge <- DGEList(present_counts, group=group)
+#calculate normalization factor between libraries
+dge <- calcNormFactors(dge)
+#estimate common and tag wise dispersion
+dge <- estimateCommonDisp(dge)
+dge <- estimateTagwiseDisp(dge)
+#perform an exact test for the difference in expression male-female
+dgeTest <- exactTest(dge)
+
+# retrieve all gene differentially expressed with a p-value lower than 0.05
+topTags <- topTags(dgeTest, n=nrow(dgeTest$table), p.value = 0.01)
+#filter for FDR < 0.05
+results <- topTags$table[topTags$table$FDR<0.05,]
+#number of genes DE with pvalue<0.05 and fdr<0.05
+nrow(results)
+write.table(x = results, file = "dif_expressed_genes.tsv", row.names = TRUE, quote = FALSE, sep="\t")
+
+# generate an MA plot with 1% differentially expressed genes
+plotSmear(dgeTest, de.tags = rownames(topTags$table)[which(topTags$table$FDR<0.01)],)
+# generate a volcano plot
+volcanoData <- cbind(topTags$table$logFC, -log10(topTags$table$PValue))
+colnames(volcanoData) <- c("logFC", "negLogPval")
+plot(volcanoData, pch=19)
+```
+
+
+Answer to questions :  
+* top ten most DE genes (ordered by logFC for pvalue<0.05 and FDR<0.05):
+
+```{r highly_expressed}
+head(x = results,n = 10)
+```
+* number of DE genes for pvalue<0.01 and logFC>2
+
+```{r filter_de}
+#add cutoff for logFC and pvalue
+results_filter <- results[abs(results$logFC)>2 & results$PValue<0.01,]
+#number of DE genes with new filters :
+nrow(results_filter)
+```
+* run again DE analysis with both present/absent calls. 
+``` {r DE_all}
+file_counts_all <- "input_files/downstream_analysis/all_counts.tsv"
+all_counts <- read.table(file = file_counts_all, header = TRUE, sep = "\t")
+dge_all <- DGEList(all_counts, group=group)
+dge_all <- calcNormFactors(dge_all)
+dge_all <- estimateCommonDisp(dge_all)
+dge_all <- estimateTagwiseDisp(dge_all)
+dgeTest_all <- exactTest(dge_all)
+topTags_all <- topTags(dgeTest_all, n=nrow(dgeTest_all$table), p.value = 0.05)
+results_all <- topTags_all$table[topTags_all$table$FDR<0.05,]
+#number of DE genes detected
+nrow(results_all)
+#add cutoff for logFC and pvalue
+results_all_filter <- results_all[abs(results_all$logFC)>2 & results_all$PValue<0.01,]
+nrow(results_all_filter)
+```
+
+
+## Optional exercice
+
+Example of R code to run a GO analysis :  
+```{r go_analysis}
+library(biomaRt)
+## topGO function of edgeR require entrez IDs. We will use biomaRt to map ensembl Ids to entrez Ids
+#query biomaRt
+mart <- useDataset("dmelanogaster_gene_ensembl", useMart("ensembl"))
+entrez_mapping <- getBM(attributes=c("ensembl_gene_id", "entrezgene_id"), mart=mart, useCache = FALSE)
+#update row names of the DGEExact object from edgeR
+table <- merge(dgeTest$table, entrez_mapping, by.x="row.names", by.y="ensembl_gene_id", all.x = TRUE)
+#looks like mapping from biomaRt has some problems of redundancy. Need hack to remove redundancy (not good practice)
+table <- na.omit(table[!duplicated(table[,c('entrezgene_id')]),])
+rownames(table) <- table$entrezgene_id
+dgeTest$table <- table[,c('logFC','logCPM','PValue')]
+
+#run the GO analysis
+go <- goana(dgeTest, species = "Dm")
+topGO(go)
+```
