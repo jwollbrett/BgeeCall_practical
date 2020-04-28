@@ -380,7 +380,7 @@ div.tocify {
   <a href="analysis.html">Processing data</a>
 </li>
 <li>
-  <a href="exercices.html">Exercices</a>
+  <a href="exercises.html">Exercises</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -460,16 +460,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree3bcbb2e49677b12be7ea24c4eaf02483938e0b9atargetblank3bcbb2ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/3bcbb2e49677b12be7ea24c4eaf02483938e0b9a" target="_blank">3bcbb2e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeffd74c0a96ec4325b1589d4776bfa67cf60b82cftargetblankffd74c0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ffd74c0a96ec4325b1589d4776bfa67cf60b82cf" target="_blank">ffd74c0</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetree3bcbb2e49677b12be7ea24c4eaf02483938e0b9atargetblank3bcbb2ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjwollbrettBgeeCallcoursetreeffd74c0a96ec4325b1589d4776bfa67cf60b82cftargetblankffd74c0a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/3bcbb2e49677b12be7ea24c4eaf02483938e0b9a" target="_blank">3bcbb2e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jwollbrett/BgeeCall_course/tree/ffd74c0a96ec4325b1589d4776bfa67cf60b82cf" target="_blank">ffd74c0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -491,7 +491,7 @@ Untracked files:
     Untracked:  release.tsv
 
 Unstaged changes:
-    Deleted:    analysis/exercices.Rmd
+    Modified:   analysis/_site.yml
 
 </code></pre>
 <p>
@@ -535,6 +535,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/jwollbrett/BgeeCall_course/blob/ffd74c0a96ec4325b1589d4776bfa67cf60b82cf/analysis/exercises.Rmd" target="_blank">ffd74c0</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-28
+</td>
+<td>
+wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_description.Rmd”,
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jwollbrett/BgeeCall_course/a753e154052349505fefff4a35849d20f796919b/docs/exercises.html" target="_blank">a753e15</a>
+</td>
+<td>
+Julien
+</td>
+<td>
+2020-04-28
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/jwollbrett/BgeeCall_course/blob/3bcbb2e49677b12be7ea24c4eaf02483938e0b9a/analysis/exercises.Rmd" target="_blank">3bcbb2e</a>
 </td>
 <td>
@@ -556,7 +590,7 @@ wflow_publish(files = c(“analysis/analysis.Rmd”, “analysis/classes_descrip
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>4 RNA-Seq libraries of Drosophila melanogaster just arrived in your RStudio cloud project.<br />
+<p>4 RNA-Seq libraries (SRX109271, SRX109272, SRX109273, SRX109274) of Drosophila melanogaster just arrived in your RStudio cloud project.<br />
 All data you need are stored in the <em>input_files</em> directory at the root of your project.<br />
 You and your virtual colleague have one hour to analyse these data and escape the Zoom room.</p>
 </div>
@@ -596,7 +630,7 @@ Do not forget to <strong>provide the same working_path than in Exercise 1</stron
 </div>
 <div id="exercise-3-principle-component-analysis-pca" class="section level2">
 <h2>Exercise 3 : Principle component analysis (PCA)</h2>
-<p>Fortunatly your colleague worked well and run BgeeCall on the 2 remaining libraries. She even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.<br />
+<p>Fortunatly your colleague worked well and run BgeeCall on the 2 remaining libraries. The output of BgeeCall for the 4 libraries are available at <em>output_files/libraries/</em>. Your colleague even merged TPM values of the 4 libraries in one file where rows correspond to genes and columns correspond to libraries.<br />
 <strong>More importantly, she only kept in this file genes considered as present in the 4 libraries</strong>.<br />
 Everything is ready for downstream analysis. She is now counting on you to do a PCA on these data</p>
 <p><strong>Important information :</strong><br />
