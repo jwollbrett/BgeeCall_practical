@@ -1,5 +1,5 @@
 ---
-title: "Solutions to Exercices"
+title: "Solutions to Exercises"
 author: 
 - name: Julien Wollbrett
   email: bgee[at]sib.swiss
@@ -11,7 +11,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Exercice 1:
+## Exercise 1:
 
 R commands to run are :
 
@@ -38,7 +38,7 @@ Answer to questions :
 Calls of presence/absence are in the file : _output_files/SRX109273/gene_level_abundance+calls.tsv_  
 
 
-## Exercice 2
+## Exercise 2
 
 
 You have to modify the file inputFile.tsv in order to generate calls on 2 libraries. After modification the file should looks like that :
@@ -67,7 +67,7 @@ head(calls_SRX109272)
 ```
 
 
-## Exercice 3
+## Exercise 3
 
 
 R commands to generate the PCA plots :
@@ -96,10 +96,10 @@ text(mds$points[,1], -mds$points[,2], rownames(mds$points), cex=0.8)
 
 Answer to questions :  
 * Libraries SRX109273 and SRX109274 cluster together. Libraries SRX109271 and SRX109272 cluster together
-* Looking at library annotations we can see that all libraries correspond to same anatomical entity, developmental stage and strain. The only difference is the sex. In the plot we see that one dimension explains all variance between libraries. It means one biological parameter explains all the variance. This parameter is the sex as female samples cluster together and male samples cluster together. In the next exercice we will calculate differential expression of male samples versus female samples.
+* Looking at library annotations we can see that all libraries correspond to same anatomical entity, developmental stage and strain. The only difference is the sex. In the plot we see that one dimension explains all variance between libraries. It means one biological parameter explains all the variance. This parameter is the sex as female samples cluster together and male samples cluster together. In the next Exercise we will calculate differential expression of male samples versus female samples.
 
 
-## Exercice 4 :  
+## Exercise 4 :  
 
 
 R commands to generate the differential expression (DE) :
@@ -179,7 +179,7 @@ nrow(results_all_filter)
 ```
 
 
-## Optional exercice
+## Optional Exercise
 
 Example of R code to run a GO analysis :  
 ```{r go_analysis}

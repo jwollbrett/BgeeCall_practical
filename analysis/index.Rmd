@@ -41,4 +41,4 @@ output:
     - Differential expression
     - GO analysis
     
-- [Exercices](exercices.html)
+- [Exercises](exercises.html)
